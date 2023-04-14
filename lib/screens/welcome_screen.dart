@@ -24,13 +24,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Row(
               children: const [
                 Text(
-                  textAlign: TextAlign.center,
                   'Reakcje chemiczne',
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 25.0,
                   ),
                 ),
+                SizedBox(
+                  height: 40.0,
+                )
               ],
             ),
             Padding(
