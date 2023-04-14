@@ -15,12 +15,12 @@ class ChemicalApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: 'welcome_screen',
+      initialRoute: WelcomeScreen.id,
       routes: {
-        'welcome_screen': (context) => WelcomeScreen(),
-        'registration_screen': (context) => RegistrationScreen(),
-        'login_screen': (context) => LoginScreen(),
-        'home_screen': (context) => HomeScreen(),
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        RegistrationScreen.id: (context) => RegistrationScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
       },
     );
   }
