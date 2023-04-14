@@ -25,6 +25,26 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               ],
             ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'login_screen');
+                  },
+                  child: const Text('Logowanie'),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'registration_screen');
+                  },
+                  child: const Text('Rejestracja'),
+                ),
+              ],
+            )
           ],
         ),
       ),
