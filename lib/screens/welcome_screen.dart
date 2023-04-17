@@ -24,6 +24,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: [
             Column(
               children: [
+                CircleAvatar(
+                  radius: 103.0,
+                  backgroundColor: Colors.green[900],
+                  child: CircleAvatar(
+                    radius: 100.0,
+                    backgroundImage: AssetImage('images/logo_appka.png'),
+                  ),
+                ),
+                SizedBox(
+                  height: 50.0,
+                ),
                 Text(
                   'Reakcje w chemii organicznej!',
                   textAlign: TextAlign.justify,
