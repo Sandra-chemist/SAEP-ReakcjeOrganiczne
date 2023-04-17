@@ -14,7 +14,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.lightGreen[400],
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -27,6 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   'Reakcje w chemii organicznej!',
                   textAlign: TextAlign.justify,
                   style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     fontFamily: 'Handlee',
                     color: Colors.green[900],
                     fontSize: 30.0,
@@ -40,23 +41,41 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Padding(
                 padding: EdgeInsets.symmetric(vertical: 10.0),
                 child: Material(
-                  color: Colors.red,
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(25.0),
+                  elevation: 5.0,
                   child: MaterialButton(
                     onPressed: () {
                       Navigator.pushNamed(context, LoginScreen.id);
                     },
-                    child: const Text('Logowanie'),
+                    child: Text(
+                      'Logowanie',
+                      style: TextStyle(
+                          fontFamily: 'Handlee',
+                          fontSize: 25.0,
+                          color: Colors.green[900],
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 )),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
               child: Material(
-                color: Colors.blue,
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(25.0),
+                elevation: 5.0,
                 child: MaterialButton(
                   onPressed: () {
                     Navigator.pushNamed(context, RegistrationScreen.id);
                   },
-                  child: const Text('Rejestracja'),
+                  child: Text(
+                    'Rejestracja',
+                    style: TextStyle(
+                        fontFamily: 'Handlee',
+                        fontSize: 25.0,
+                        color: Colors.green[900],
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ),
