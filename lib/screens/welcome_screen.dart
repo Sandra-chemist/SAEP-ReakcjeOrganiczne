@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/screens/login_screen.dart';
+import 'package:saep_reakcje_organiczne/components/rounded_button.dart';
 import 'package:saep_reakcje_organiczne/screens/registration_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -38,46 +39,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 )
               ],
             ),
-            Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                child: Material(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25.0),
-                  elevation: 5.0,
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, LoginScreen.id);
-                    },
-                    child: Text(
-                      'Logowanie',
-                      style: TextStyle(
-                          fontFamily: 'Handlee',
-                          fontSize: 25.0,
-                          color: Colors.green[900],
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                )),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.0),
-              child: Material(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  child: Text(
-                    'Rejestracja',
-                    style: TextStyle(
-                        fontFamily: 'Handlee',
-                        fontSize: 25.0,
-                        color: Colors.green[900],
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
+            RoundedButton(
+              title: 'Logowanie',
+              screenId: LoginScreen.id,
+            ),
+            RoundedButton(
+              title: 'Rejestracja',
+              screenId: RegistrationScreen.id,
             ),
           ],
         ),
