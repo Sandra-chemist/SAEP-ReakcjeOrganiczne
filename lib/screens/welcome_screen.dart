@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/screens/login_screen.dart';
 import 'package:saep_reakcje_organiczne/components/rounded_button.dart';
 import 'package:saep_reakcje_organiczne/screens/registration_screen.dart';
+import 'package:saep_reakcje_organiczne/constants.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -38,12 +39,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Text(
                   'Reakcje w chemii organicznej!',
                   textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Handlee',
-                    color: Colors.green[900],
-                    fontSize: 30.0,
-                  ),
+                  style: kTitleStyle,
                 ),
                 const SizedBox(
                   height: 40.0,
@@ -61,11 +57,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             const SizedBox(
               height: 100.0,
             ),
-            Text(
+            const Text(
               'Dr Sandra Skibiszewska',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  color: Colors.green[900],
+                  color: Color(0xFF1B5E20),
                   fontFamily: 'Handlee',
                   fontSize: 20.0),
             ),
