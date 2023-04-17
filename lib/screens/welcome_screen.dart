@@ -21,14 +21,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              children: const [
+            Column(
+              children: [
                 Text(
-                  'Reakcje chemiczne',
+                  'Reakcje w chemii organicznej!',
                   textAlign: TextAlign.justify,
                   style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 25.0,
+                    fontFamily: 'Handlee',
+                    color: Colors.green[900],
+                    fontSize: 30.0,
                   ),
                 ),
                 SizedBox(
