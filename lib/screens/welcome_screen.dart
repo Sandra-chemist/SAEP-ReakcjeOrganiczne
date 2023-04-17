@@ -27,13 +27,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 CircleAvatar(
                   radius: 103.0,
                   backgroundColor: Colors.green[900],
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 100.0,
                     backgroundImage: AssetImage('images/logo_appka.png'),
                   ),
                 ),
-                SizedBox(
-                  height: 50.0,
+                const SizedBox(
+                  height: 40.0,
                 ),
                 Text(
                   'Reakcje w chemii organicznej!',
@@ -45,9 +45,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     fontSize: 30.0,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40.0,
-                )
+                ),
               ],
             ),
             RoundedButton(
@@ -57,6 +57,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             RoundedButton(
               title: 'Rejestracja',
               screenId: RegistrationScreen.id,
+            ),
+            const SizedBox(
+              height: 100.0,
+            ),
+            Text(
+              'Dr Sandra Skibiszewska',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Colors.green[900],
+                  fontFamily: 'Handlee',
+                  fontSize: 20.0),
             ),
           ],
         ),
