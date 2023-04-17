@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:saep_reakcje_organiczne/screens/login_screen.dart';
+import 'package:saep_reakcje_organiczne/components/rounded_button.dart';
+import 'package:saep_reakcje_organiczne/screens/registration_screen.dart';
+import 'package:saep_reakcje_organiczne/constants.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -12,40 +16,55 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.lightGreen[400],
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 80.0),
+        padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              children: const [
+            Column(
+              children: [
+                CircleAvatar(
+                  radius: 103.0,
+                  backgroundColor: Colors.green[900],
+                  child: const CircleAvatar(
+                    radius: 100.0,
+                    backgroundImage: AssetImage('images/logo_appka.png'),
+                  ),
+                ),
+                const SizedBox(
+                  height: 40.0,
+                ),
                 Text(
-                  'Reakcje chemiczne',
-                  style: TextStyle(color: Colors.black, fontSize: 25.0),
+                  'Reakcje w chemii organicznej!',
+                  textAlign: TextAlign.justify,
+                  style: kTitleStyle,
+                ),
+                const SizedBox(
+                  height: 40.0,
                 ),
               ],
             ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'login_screen');
-                  },
-                  child: const Text('Logowanie'),
-                ),
-              ],
+            RoundedButton(
+              title: 'Logowanie',
+              screenId: LoginScreen.id,
             ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'registration_screen');
-                  },
-                  child: const Text('Rejestracja'),
-                ),
-              ],
-            )
+            RoundedButton(
+              title: 'Rejestracja',
+              screenId: RegistrationScreen.id,
+            ),
+            const SizedBox(
+              height: 100.0,
+            ),
+            const Text(
+              'Dr Sandra Skibiszewska',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Color(0xFF1B5E20),
+                  fontFamily: 'Handlee',
+                  fontSize: 20.0),
+            ),
           ],
         ),
       ),
