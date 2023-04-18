@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "358345587476",
+    "project_id": "saep-reakcjeorganiczne",
+    "storage_bucket": "saep-reakcjeorganiczne.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358345587476:android:8e981ba8f584362e862001",
+        "android_client_info": {
+          "package_name": "com.sandra.saep_reakcje_organiczne"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358345587476-5fmloelin5k4aa4kb4bsq7kev8bjii3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsOFMRtbP1UNWYtn62MKMfQSwKmFoGduY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358345587476-5fmloelin5k4aa4kb4bsq7kev8bjii3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
