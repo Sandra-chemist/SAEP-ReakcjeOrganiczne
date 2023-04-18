@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:saep_reakcje_organiczne/screens/home_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static const String id = 'registration_screen';
@@ -9,6 +11,7 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  final _auth = FirebaseAuth.instance;
   late String email;
   late String password;
 
@@ -49,9 +52,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               child: Material(
                 color: Colors.red,
                 child: MaterialButton(
-                  onPressed: () {
+                  onPressed: () async {
                     print(email);
                     print(password);
+                    try {
+                      final newUser =
+                          await _auth.createUserWithEmailAndPassword(
+                              email: email, password: password);
+                      if (newUser != null) {
+                        Navigator.pushNamed(context, HomeScreen.id);
+                      }
+                    } catch (e) {
+                      print(e);
+                    }
                   },
                   child: const Text(
                     'Zarejestruj się',
