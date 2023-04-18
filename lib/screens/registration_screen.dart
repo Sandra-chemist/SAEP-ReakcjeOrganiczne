@@ -9,6 +9,9 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  late String email;
+  late String password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,14 +23,22 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TextField(
-              onChanged: (value) {},
+              keyboardType: TextInputType.emailAddress,
+              textAlign: TextAlign.center,
+              onChanged: (value) {
+                email = value;
+              },
               decoration: const InputDecoration(
                   hintText: 'E-mail',
                   contentPadding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0)),
             ),
             TextField(
-              onChanged: (value) {},
+              obscureText: true,
+              textAlign: TextAlign.center,
+              onChanged: (value) {
+                password = value;
+              },
               decoration: const InputDecoration(
                   hintText: 'Hasło',
                   contentPadding:
@@ -38,7 +49,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               child: Material(
                 color: Colors.red,
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print(email);
+                    print(password);
+                  },
                   child: const Text(
                     'Zarejestruj się',
                     style: TextStyle(color: Colors.white),
