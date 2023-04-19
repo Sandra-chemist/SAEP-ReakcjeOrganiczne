@@ -25,6 +25,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Column(
+              children: [
+                Text(
+                  'REJESTRACJA',
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                      fontSize: 30.0,
+                      fontFamily: 'Handlee',
+                      color: Colors.green[900]),
+                ),
+              ],
+            ),
             IconButton(
                 icon: const Icon(
                   Icons.arrow_circle_left_rounded,
