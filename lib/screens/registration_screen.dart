@@ -25,6 +25,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            IconButton(
+                icon: const Icon(
+                  Icons.arrow_circle_left_rounded,
+                  size: 40.0,
+                  color: Colors.lightGreen,
+                ),
+                onPressed: () {
+                  _auth.signOut();
+                  Navigator.pop(context);
+                }),
             TextField(
               keyboardType: TextInputType.emailAddress,
               textAlign: TextAlign.center,
