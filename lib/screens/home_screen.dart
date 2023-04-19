@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:saep_reakcje_organiczne/screens/welcome_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -33,9 +34,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.yellow,
-      body: Text('strona główna'),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        leading: null,
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.close),
+              onPressed: () {
+                _auth.signOut();
+                Navigator.pushNamed(context, WelcomeScreen.id);
+              }),
+        ],
+      ),
+      body: SafeArea(child: Column()),
     );
   }
 }
