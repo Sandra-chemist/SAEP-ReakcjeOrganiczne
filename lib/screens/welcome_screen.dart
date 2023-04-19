@@ -50,14 +50,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               screenId: RegistrationScreen.id,
               colour: Colors.white,
             ),
-            const Text(
-              'Dr Sandra Skibiszewska',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Color(0xFF1B5E20),
-                  fontFamily: 'Handlee',
-                  fontSize: 20.0),
-            ),
+            kAuthorName,
           ],
         ),
       ),

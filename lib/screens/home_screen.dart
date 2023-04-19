@@ -72,14 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: 'QUIZ', screenId: '', colour: Colors.lightGreen),
               RoundedButton(
                   title: 'PUNKTY', screenId: '', colour: Colors.lightGreen),
-              const Text(
-                'Dr Sandra Skibiszewska',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color(0xFF1B5E20),
-                    fontFamily: 'Handlee',
-                    fontSize: 20.0),
-              ),
+              kAuthorName,
             ],
           ),
         ),
