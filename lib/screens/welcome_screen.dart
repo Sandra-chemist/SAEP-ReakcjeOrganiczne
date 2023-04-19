@@ -33,16 +33,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     backgroundImage: AssetImage('images/logo_appka.png'),
                   ),
                 ),
-                const SizedBox(
-                  height: 40.0,
-                ),
                 Text(
                   'Reakcje w chemii organicznej!',
                   textAlign: TextAlign.justify,
                   style: kTitleStyle,
-                ),
-                const SizedBox(
-                  height: 40.0,
                 ),
               ],
             ),
@@ -53,9 +47,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             RoundedButton(
               title: 'Rejestracja',
               screenId: RegistrationScreen.id,
-            ),
-            const SizedBox(
-              height: 100.0,
             ),
             const Text(
               'Dr Sandra Skibiszewska',
