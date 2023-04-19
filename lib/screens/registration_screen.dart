@@ -60,7 +60,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.red,
+                color: Colors.white,
                 child: MaterialButton(
                   onPressed: () async {
                     print(email);
@@ -76,13 +76,17 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       print(e);
                     }
                   },
-                  child: const Text(
-                    'Zarejestruj się',
-                    style: TextStyle(color: Colors.white),
+                  child: Text(
+                    'Zarejestruj',
+                    style: TextStyle(
+                        fontFamily: 'Handlee',
+                        fontSize: 25.0,
+                        color: Colors.green[900],
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
