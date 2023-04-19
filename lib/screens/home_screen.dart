@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/screens/welcome_screen.dart';
 import 'package:saep_reakcje_organiczne/constants.dart';
+import 'package:saep_reakcje_organiczne/components/rounded_button.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -65,69 +66,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                child: Material(
-                  color: Colors.lightGreen,
-                  borderRadius: BorderRadius.circular(25.0),
-                  elevation: 5.0,
-                  child: MaterialButton(
-                    onPressed: () {
-                      null;
-                    },
-                    child: Text(
-                      'NAUKA',
-                      style: TextStyle(
-                          fontFamily: 'Handlee',
-                          fontSize: 25.0,
-                          color: Colors.green[900],
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                child: Material(
-                  color: Colors.lightGreen,
-                  borderRadius: BorderRadius.circular(25.0),
-                  elevation: 5.0,
-                  child: MaterialButton(
-                    onPressed: () {
-                      null;
-                    },
-                    child: Text(
-                      'QUIZ',
-                      style: TextStyle(
-                          fontFamily: 'Handlee',
-                          fontSize: 25.0,
-                          color: Colors.green[900],
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                child: Material(
-                  color: Colors.lightGreen,
-                  borderRadius: BorderRadius.circular(25.0),
-                  elevation: 5.0,
-                  child: MaterialButton(
-                    onPressed: () {
-                      null;
-                    },
-                    child: Text(
-                      'PUNKTY',
-                      style: TextStyle(
-                          fontFamily: 'Handlee',
-                          fontSize: 25.0,
-                          color: Colors.green[900],
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
+              RoundedButton(
+                  title: 'NAUKA', screenId: '', colour: Colors.lightGreen),
+              RoundedButton(
+                  title: 'QUIZ', screenId: '', colour: Colors.lightGreen),
+              RoundedButton(
+                  title: 'PUNKTY', screenId: '', colour: Colors.lightGreen),
               const Text(
                 'Dr Sandra Skibiszewska',
                 textAlign: TextAlign.center,
