@@ -43,10 +43,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             RoundedButton(
               title: 'Logowanie',
               screenId: LoginScreen.id,
+              colour: Colors.white,
             ),
             RoundedButton(
               title: 'Rejestracja',
               screenId: RegistrationScreen.id,
+              colour: Colors.white,
             ),
             const Text(
               'Dr Sandra Skibiszewska',
