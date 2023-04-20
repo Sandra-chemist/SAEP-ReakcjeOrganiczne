@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/screens/welcome_screen.dart';
 import 'package:saep_reakcje_organiczne/constants.dart';
 import 'package:saep_reakcje_organiczne/components/rounded_button.dart';
+import 'package:saep_reakcje_organiczne/screens/quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -69,7 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
               RoundedButton(
                   title: 'NAUKA', screenId: '', colour: Colors.lightGreen),
               RoundedButton(
-                  title: 'QUIZ', screenId: '', colour: Colors.lightGreen),
+                  title: 'QUIZ',
+                  screenId: QuizScreen.id,
+                  colour: Colors.lightGreen),
               RoundedButton(
                   title: 'PUNKTY', screenId: '', colour: Colors.lightGreen),
               kAuthorName,
