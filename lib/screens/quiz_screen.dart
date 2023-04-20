@@ -12,7 +12,67 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.lightGreen,
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(5.0),
+              child: Center(
+                child: Text(
+                  'Pytanie',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 25.0, color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: SizedBox(
+                child: TextButton(
+                  style: TextButton.styleFrom(backgroundColor: Colors.white),
+                  onPressed: () {},
+                  child: Text('A'),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.white),
+                onPressed: () {},
+                child: Text('B'),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.white),
+                onPressed: () {},
+                child: Text('C'),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.white),
+                onPressed: () {},
+                child: Text('D'),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
