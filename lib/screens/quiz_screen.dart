@@ -9,6 +9,17 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
+  List<Icon> scoreKeeper = [
+    const Icon(
+      Icons.check,
+      color: Colors.white,
+    ),
+    const Icon(
+      Icons.close,
+      color: Colors.red,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,16 +83,7 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
           ),
           Row(
-            children: const [
-              Icon(
-                Icons.check,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.close,
-                color: Colors.red,
-              ),
-            ],
+            children: scoreKeeper,
           )
         ],
       ),
