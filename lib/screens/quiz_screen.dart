@@ -71,6 +71,18 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             ),
           ),
+          Row(
+            children: const [
+              Icon(
+                Icons.check,
+                color: Colors.white,
+              ),
+              Icon(
+                Icons.close,
+                color: Colors.red,
+              ),
+            ],
+          )
         ],
       ),
     );
