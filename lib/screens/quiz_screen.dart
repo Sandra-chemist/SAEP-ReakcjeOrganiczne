@@ -9,16 +9,15 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  List<Icon> scoreKeeper = [
-    const Icon(
-      Icons.check,
-      color: Colors.white,
-    ),
-    const Icon(
-      Icons.close,
-      color: Colors.red,
-    ),
+  List<Icon> scoreKeeper = [];
+
+  List<String> chemicalQuestions = [
+    'Jakie warunki przy reakcji substytucji rodnikowej?',
+    'Jakim odczynnikiem odróżnimy alkohole mono od polihydroksylowych?',
+    'Co to jest mieszanina nitrująca?',
   ];
+
+  int questionNumber = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +28,12 @@ class _QuizScreenState extends State<QuizScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
+            flex: 4,
             child: Padding(
               padding: EdgeInsets.all(5.0),
               child: Center(
                 child: Text(
-                  'Pytanie',
+                  chemicalQuestions[questionNumber],
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 25.0, color: Colors.white),
                 ),
@@ -46,7 +46,11 @@ class _QuizScreenState extends State<QuizScreen> {
               child: SizedBox(
                 child: TextButton(
                   style: TextButton.styleFrom(backgroundColor: Colors.white),
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      questionNumber++;
+                    });
+                  },
                   child: Text('A'),
                 ),
               ),
@@ -57,7 +61,11 @@ class _QuizScreenState extends State<QuizScreen> {
               padding: EdgeInsets.all(10.0),
               child: TextButton(
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    questionNumber++;
+                  });
+                },
                 child: Text('B'),
               ),
             ),
