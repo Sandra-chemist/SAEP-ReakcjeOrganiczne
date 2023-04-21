@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:saep_reakcje_organiczne/components/question.dart';
-import 'package:saep_reakcje_organiczne/components/question.dart';
+import 'package:saep_reakcje_organiczne/components/quiz_brain.dart';
+
+QuizBrain quizBrain = QuizBrain();
 
 class QuizScreen extends StatefulWidget {
   static const String id = 'quiz_screen';
@@ -12,31 +13,6 @@ class QuizScreen extends StatefulWidget {
 
 class _QuizScreenState extends State<QuizScreen> {
   List<Icon> scoreKeeper = [];
-
-  List<Question> questionBank = [
-    Question(
-        questionText: 'Jakie warunki przy reakcji substytucji rodnikowej?',
-        questionAnswer: 'A',
-        answerA: 'światło',
-        answerB: 'chlorek żelaza (III)',
-        answerC: 'stężony kwas siarkowy',
-        answerD: 'nie są wymagane szczególne warunki'),
-    Question(
-        questionText:
-            'Jakim odczynnikiem odróżnimy alkohole mono od polihydroksylowych?',
-        questionAnswer: 'C',
-        answerA: 'wodór',
-        answerB: 'nie odróżnimy',
-        answerC: 'wodorotlenek miedzi (II)',
-        answerD: 'stężony kwas azotowy'),
-    Question(
-        questionText: 'Co to jest mieszanina nitrująca?',
-        questionAnswer: 'B',
-        answerA: 'nie ma czegoś takiego',
-        answerB: 'stężony kwas azotowy zmieszany ze stężonym kwasem siarkowym',
-        answerC: 'kwas azotowy (III)',
-        answerD: 'zmieszany kwas azotowy (III) i kwas azotowy (V)'),
-  ];
 
   int questionNumber = 0;
 
@@ -54,7 +30,7 @@ class _QuizScreenState extends State<QuizScreen> {
               padding: EdgeInsets.all(5.0),
               child: Center(
                 child: Text(
-                  questionBank[questionNumber].questionText,
+                  quizBrain.questionBank[questionNumber].questionText,
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 25.0, color: Colors.white),
                 ),
@@ -69,7 +45,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   style: TextButton.styleFrom(backgroundColor: Colors.white),
                   onPressed: () {
                     String correctAnswer =
-                        questionBank[questionNumber].questionAnswer;
+                        quizBrain.questionBank[questionNumber].questionAnswer;
                     if (correctAnswer == 'A') {
                       print('is good');
                     } else {
@@ -80,7 +56,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     });
                   },
                   child: Text(
-                    questionBank[questionNumber].answerA,
+                    quizBrain.questionBank[questionNumber].answerA,
                   ),
                 ),
               ),
@@ -93,7 +69,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
                   String correctAnswer =
-                      questionBank[questionNumber].questionAnswer;
+                      quizBrain.questionBank[questionNumber].questionAnswer;
                   if (correctAnswer == 'B') {
                     print('is good');
                   } else {
@@ -104,7 +80,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   });
                 },
                 child: Text(
-                  questionBank[questionNumber].answerB,
+                  quizBrain.questionBank[questionNumber].answerB,
                 ),
               ),
             ),
@@ -116,7 +92,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
                   String correctAnswer =
-                      questionBank[questionNumber].questionAnswer;
+                      quizBrain.questionBank[questionNumber].questionAnswer;
                   if (correctAnswer == 'C') {
                     print('is good');
                   } else {
@@ -127,7 +103,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   });
                 },
                 child: Text(
-                  questionBank[questionNumber].answerC,
+                  quizBrain.questionBank[questionNumber].answerC,
                 ),
               ),
             ),
@@ -139,7 +115,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
                   String correctAnswer =
-                      questionBank[questionNumber].questionAnswer;
+                      quizBrain.questionBank[questionNumber].questionAnswer;
                   if (correctAnswer == 'D') {
                     print('is good');
                   } else {
@@ -150,7 +126,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   });
                 },
                 child: Text(
-                  questionBank[questionNumber].answerD,
+                  quizBrain.questionBank[questionNumber].answerD,
                 ),
               ),
             ),
