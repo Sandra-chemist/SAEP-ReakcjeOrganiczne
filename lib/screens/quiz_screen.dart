@@ -14,6 +14,25 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   List<Icon> scoreKeeper = [];
 
+  void checkAnswer(String userPickedAnswer) {
+    String correctAnswer = quizBrain.getQuestionAnswer();
+
+    setState(() {
+      if (userPickedAnswer == correctAnswer) {
+        scoreKeeper.add(const Icon(
+          Icons.check,
+          color: Colors.white,
+        ));
+      } else {
+        scoreKeeper.add(const Icon(
+          Icons.close,
+          color: Colors.red,
+        ));
+      }
+      quizBrain.nextQuestion();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,15 +61,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 child: TextButton(
                   style: TextButton.styleFrom(backgroundColor: Colors.white),
                   onPressed: () {
-                    String correctAnswer = quizBrain.getQuestionAnswer();
-                    if (correctAnswer == 'A') {
-                      print('is good');
-                    } else {
-                      print('is not good');
-                    }
-                    setState(() {
-                      quizBrain.nextQuestion();
-                    });
+                    checkAnswer('A');
                   },
                   child: Text(
                     quizBrain.getAnswerA(),
@@ -65,15 +76,7 @@ class _QuizScreenState extends State<QuizScreen> {
               child: TextButton(
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
-                  String correctAnswer = quizBrain.getQuestionAnswer();
-                  if (correctAnswer == 'B') {
-                    print('is good');
-                  } else {
-                    print('is not good');
-                  }
-                  setState(() {
-                    quizBrain.nextQuestion();
-                  });
+                  checkAnswer('B');
                 },
                 child: Text(
                   quizBrain.getAnswerB(),
@@ -87,15 +90,7 @@ class _QuizScreenState extends State<QuizScreen> {
               child: TextButton(
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
-                  String correctAnswer = quizBrain.getQuestionAnswer();
-                  if (correctAnswer == 'C') {
-                    print('is good');
-                  } else {
-                    print('is not good');
-                  }
-                  setState(() {
-                    quizBrain.nextQuestion();
-                  });
+                  checkAnswer('C');
                 },
                 child: Text(
                   quizBrain.getAnswerC(),
@@ -109,15 +104,7 @@ class _QuizScreenState extends State<QuizScreen> {
               child: TextButton(
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
-                  String correctAnswer = quizBrain.getQuestionAnswer();
-                  if (correctAnswer == 'D') {
-                    print('is good');
-                  } else {
-                    print('is not good');
-                  }
-                  setState(() {
-                    quizBrain.nextQuestion();
-                  });
+                  checkAnswer('D');
                 },
                 child: Text(
                   quizBrain.getAnswerD(),
@@ -127,6 +114,7 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           Row(
             children: scoreKeeper,
+            mainAxisAlignment: MainAxisAlignment.center,
           )
         ],
       ),
