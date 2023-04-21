@@ -30,7 +30,7 @@ class _QuizScreenState extends State<QuizScreen> {
               padding: EdgeInsets.all(5.0),
               child: Center(
                 child: Text(
-                  quizBrain.questionBank[questionNumber].questionText,
+                  quizBrain.getQuestionText(questionNumber),
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 25.0, color: Colors.white),
                 ),
@@ -45,7 +45,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   style: TextButton.styleFrom(backgroundColor: Colors.white),
                   onPressed: () {
                     String correctAnswer =
-                        quizBrain.questionBank[questionNumber].questionAnswer;
+                        quizBrain.getQuestionAnswer(questionNumber);
                     if (correctAnswer == 'A') {
                       print('is good');
                     } else {
@@ -56,7 +56,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     });
                   },
                   child: Text(
-                    quizBrain.questionBank[questionNumber].answerA,
+                    quizBrain.getAnswerA(questionNumber),
                   ),
                 ),
               ),
@@ -69,7 +69,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
                   String correctAnswer =
-                      quizBrain.questionBank[questionNumber].questionAnswer;
+                      quizBrain.getQuestionAnswer(questionNumber);
                   if (correctAnswer == 'B') {
                     print('is good');
                   } else {
@@ -80,7 +80,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   });
                 },
                 child: Text(
-                  quizBrain.questionBank[questionNumber].answerB,
+                  quizBrain.getAnswerB(questionNumber),
                 ),
               ),
             ),
@@ -92,7 +92,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
                   String correctAnswer =
-                      quizBrain.questionBank[questionNumber].questionAnswer;
+                      quizBrain.getQuestionAnswer(questionNumber);
                   if (correctAnswer == 'C') {
                     print('is good');
                   } else {
@@ -103,7 +103,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   });
                 },
                 child: Text(
-                  quizBrain.questionBank[questionNumber].answerC,
+                  quizBrain.getAnswerC(questionNumber),
                 ),
               ),
             ),
@@ -115,7 +115,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
                   String correctAnswer =
-                      quizBrain.questionBank[questionNumber].questionAnswer;
+                      quizBrain.getQuestionAnswer(questionNumber);
                   if (correctAnswer == 'D') {
                     print('is good');
                   } else {
@@ -126,7 +126,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   });
                 },
                 child: Text(
-                  quizBrain.questionBank[questionNumber].answerD,
+                  quizBrain.getAnswerD(questionNumber),
                 ),
               ),
             ),
