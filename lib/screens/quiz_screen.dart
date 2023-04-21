@@ -64,8 +64,10 @@ class _QuizScreenState extends State<QuizScreen> {
               padding: EdgeInsets.all(10.0),
               child: SizedBox(
                 child: TextButton(
-                  style:
-                      TextButton.styleFrom(backgroundColor: Colors.lightGreen),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.lightGreen,
+                    elevation: 5.0,
+                  ),
                   onPressed: () {
                     checkAnswer('A');
                   },
@@ -81,7 +83,10 @@ class _QuizScreenState extends State<QuizScreen> {
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.lightGreen),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.lightGreen,
+                  elevation: 5.0,
+                ),
                 onPressed: () {
                   checkAnswer('B');
                 },
@@ -96,7 +101,10 @@ class _QuizScreenState extends State<QuizScreen> {
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.lightGreen),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.lightGreen,
+                  elevation: 5.0,
+                ),
                 onPressed: () {
                   checkAnswer('C');
                 },
@@ -111,7 +119,10 @@ class _QuizScreenState extends State<QuizScreen> {
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.lightGreen),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.lightGreen,
+                  elevation: 5.0,
+                ),
                 onPressed: () {
                   checkAnswer('D');
                 },
