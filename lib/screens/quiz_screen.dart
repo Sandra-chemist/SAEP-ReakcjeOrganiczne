@@ -11,6 +11,10 @@ class QuizScreen extends StatefulWidget {
   _QuizScreenState createState() => _QuizScreenState();
 }
 
+class Score {
+  static int score = 0;
+}
+
 class _QuizScreenState extends State<QuizScreen> {
   List<Icon> scoreKeeper = [];
 
@@ -23,6 +27,7 @@ class _QuizScreenState extends State<QuizScreen> {
           Icons.check,
           color: Colors.white,
         ));
+        Score.score++;
       } else {
         scoreKeeper.add(const Icon(
           Icons.close,
@@ -115,7 +120,13 @@ class _QuizScreenState extends State<QuizScreen> {
           Row(
             children: scoreKeeper,
             mainAxisAlignment: MainAxisAlignment.center,
-          )
+          ),
+          Expanded(
+            child: Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: 150.0, vertical: 20.0),
+                child: Text('Suma punktów: ' + Score.score.toString())),
+          ),
         ],
       ),
     );
