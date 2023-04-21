@@ -5,7 +5,7 @@ class QuizBrain {
 
   List<Question> _questionBank = [
     Question(
-        questionText: 'Jakie warunki przy reakcji substytucji rodnikowej?',
+        questionText: '1. Jakie warunki przy reakcji substytucji rodnikowej?',
         questionAnswer: 'A',
         answerA: 'światło',
         answerB: 'chlorek żelaza (III)',
@@ -13,14 +13,14 @@ class QuizBrain {
         answerD: 'nie są wymagane szczególne warunki'),
     Question(
         questionText:
-            'Jakim odczynnikiem odróżnimy alkohole mono od polihydroksylowych?',
+            '2. Jakim odczynnikiem odróżnimy alkohole mono od polihydroksylowych?',
         questionAnswer: 'C',
         answerA: 'wodór',
         answerB: 'nie odróżnimy',
         answerC: 'wodorotlenek miedzi (II)',
         answerD: 'stężony kwas azotowy'),
     Question(
-        questionText: 'Co to jest mieszanina nitrująca?',
+        questionText: '3. Co to jest mieszanina nitrująca?',
         questionAnswer: 'B',
         answerA: 'nie ma czegoś takiego',
         answerB: 'stężony kwas azotowy zmieszany ze stężonym kwasem siarkowym',

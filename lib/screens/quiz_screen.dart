@@ -25,7 +25,7 @@ class _QuizScreenState extends State<QuizScreen> {
       if (userPickedAnswer == correctAnswer) {
         scoreKeeper.add(const Icon(
           Icons.check,
-          color: Colors.white,
+          color: Colors.green,
         ));
         Score.score++;
       } else {
@@ -41,7 +41,7 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen,
+      backgroundColor: Colors.white,
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -54,7 +54,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 child: Text(
                   quizBrain.getQuestionText(),
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 25.0, color: Colors.white),
+                  style: TextStyle(fontSize: 25.0, color: Colors.green),
                 ),
               ),
             ),
@@ -64,12 +64,14 @@ class _QuizScreenState extends State<QuizScreen> {
               padding: EdgeInsets.all(10.0),
               child: SizedBox(
                 child: TextButton(
-                  style: TextButton.styleFrom(backgroundColor: Colors.white),
+                  style:
+                      TextButton.styleFrom(backgroundColor: Colors.lightGreen),
                   onPressed: () {
                     checkAnswer('A');
                   },
                   child: Text(
                     quizBrain.getAnswerA(),
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -79,12 +81,13 @@ class _QuizScreenState extends State<QuizScreen> {
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.white),
+                style: TextButton.styleFrom(backgroundColor: Colors.lightGreen),
                 onPressed: () {
                   checkAnswer('B');
                 },
                 child: Text(
                   quizBrain.getAnswerB(),
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ),
@@ -93,12 +96,13 @@ class _QuizScreenState extends State<QuizScreen> {
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.white),
+                style: TextButton.styleFrom(backgroundColor: Colors.lightGreen),
                 onPressed: () {
                   checkAnswer('C');
                 },
                 child: Text(
                   quizBrain.getAnswerC(),
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ),
@@ -107,12 +111,13 @@ class _QuizScreenState extends State<QuizScreen> {
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.white),
+                style: TextButton.styleFrom(backgroundColor: Colors.lightGreen),
                 onPressed: () {
                   checkAnswer('D');
                 },
                 child: Text(
                   quizBrain.getAnswerD(),
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ),
@@ -121,11 +126,18 @@ class _QuizScreenState extends State<QuizScreen> {
             children: scoreKeeper,
             mainAxisAlignment: MainAxisAlignment.center,
           ),
-          Expanded(
-            child: Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: 150.0, vertical: 20.0),
-                child: Text('Suma punktów: ' + Score.score.toString())),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Column(children: [
+              Text(
+                'SUMA PUNKTÓW: ' + Score.score.toString(),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold),
+              ),
+            ]),
           ),
         ],
       ),
