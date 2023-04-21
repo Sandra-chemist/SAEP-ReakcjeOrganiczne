@@ -14,8 +14,6 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   List<Icon> scoreKeeper = [];
 
-  int questionNumber = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +28,7 @@ class _QuizScreenState extends State<QuizScreen> {
               padding: EdgeInsets.all(5.0),
               child: Center(
                 child: Text(
-                  quizBrain.getQuestionText(questionNumber),
+                  quizBrain.getQuestionText(),
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 25.0, color: Colors.white),
                 ),
@@ -44,19 +42,18 @@ class _QuizScreenState extends State<QuizScreen> {
                 child: TextButton(
                   style: TextButton.styleFrom(backgroundColor: Colors.white),
                   onPressed: () {
-                    String correctAnswer =
-                        quizBrain.getQuestionAnswer(questionNumber);
+                    String correctAnswer = quizBrain.getQuestionAnswer();
                     if (correctAnswer == 'A') {
                       print('is good');
                     } else {
                       print('is not good');
                     }
                     setState(() {
-                      questionNumber++;
+                      quizBrain.nextQuestion();
                     });
                   },
                   child: Text(
-                    quizBrain.getAnswerA(questionNumber),
+                    quizBrain.getAnswerA(),
                   ),
                 ),
               ),
@@ -68,19 +65,18 @@ class _QuizScreenState extends State<QuizScreen> {
               child: TextButton(
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
-                  String correctAnswer =
-                      quizBrain.getQuestionAnswer(questionNumber);
+                  String correctAnswer = quizBrain.getQuestionAnswer();
                   if (correctAnswer == 'B') {
                     print('is good');
                   } else {
                     print('is not good');
                   }
                   setState(() {
-                    questionNumber++;
+                    quizBrain.nextQuestion();
                   });
                 },
                 child: Text(
-                  quizBrain.getAnswerB(questionNumber),
+                  quizBrain.getAnswerB(),
                 ),
               ),
             ),
@@ -91,19 +87,18 @@ class _QuizScreenState extends State<QuizScreen> {
               child: TextButton(
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
-                  String correctAnswer =
-                      quizBrain.getQuestionAnswer(questionNumber);
+                  String correctAnswer = quizBrain.getQuestionAnswer();
                   if (correctAnswer == 'C') {
                     print('is good');
                   } else {
                     print('is not good');
                   }
                   setState(() {
-                    questionNumber++;
+                    quizBrain.nextQuestion();
                   });
                 },
                 child: Text(
-                  quizBrain.getAnswerC(questionNumber),
+                  quizBrain.getAnswerC(),
                 ),
               ),
             ),
@@ -114,19 +109,18 @@ class _QuizScreenState extends State<QuizScreen> {
               child: TextButton(
                 style: TextButton.styleFrom(backgroundColor: Colors.white),
                 onPressed: () {
-                  String correctAnswer =
-                      quizBrain.getQuestionAnswer(questionNumber);
+                  String correctAnswer = quizBrain.getQuestionAnswer();
                   if (correctAnswer == 'D') {
                     print('is good');
                   } else {
                     print('is not good');
                   }
                   setState(() {
-                    questionNumber++;
+                    quizBrain.nextQuestion();
                   });
                 },
                 child: Text(
-                  quizBrain.getAnswerD(questionNumber),
+                  quizBrain.getAnswerD(),
                 ),
               ),
             ),

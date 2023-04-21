@@ -1,6 +1,8 @@
 import 'package:saep_reakcje_organiczne/components/question.dart';
 
 class QuizBrain {
+  int _questionNumber = 0;
+
   List<Question> _questionBank = [
     Question(
         questionText: 'Jakie warunki przy reakcji substytucji rodnikowej?',
@@ -26,27 +28,33 @@ class QuizBrain {
         answerD: 'zmieszany kwas azotowy (III) i kwas azotowy (V)'),
   ];
 
-  String getQuestionText(int questionNumber) {
-    return _questionBank[questionNumber].questionText;
+  void nextQuestion() {
+    if (_questionNumber < _questionBank.length - 1) {
+      _questionNumber++;
+    }
   }
 
-  String getQuestionAnswer(int questionNumber) {
-    return _questionBank[questionNumber].questionAnswer;
+  String getQuestionText() {
+    return _questionBank[_questionNumber].questionText;
   }
 
-  String getAnswerA(int questionNumber) {
-    return _questionBank[questionNumber].answerA;
+  String getQuestionAnswer() {
+    return _questionBank[_questionNumber].questionAnswer;
   }
 
-  String getAnswerB(int questionNumber) {
-    return _questionBank[questionNumber].answerB;
+  String getAnswerA() {
+    return _questionBank[_questionNumber].answerA;
   }
 
-  String getAnswerC(int questionNumber) {
-    return _questionBank[questionNumber].answerC;
+  String getAnswerB() {
+    return _questionBank[_questionNumber].answerB;
   }
 
-  String getAnswerD(int questionNumber) {
-    return _questionBank[questionNumber].answerD;
+  String getAnswerC() {
+    return _questionBank[_questionNumber].answerC;
+  }
+
+  String getAnswerD() {
+    return _questionBank[_questionNumber].answerD;
   }
 }
