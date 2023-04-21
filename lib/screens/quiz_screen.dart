@@ -19,8 +19,32 @@ class _QuizScreenState extends State<QuizScreen> {
 
   List<String> chemicalAnswers = [
     'A',
+    'C',
     'B',
-    'D',
+  ];
+
+  List<String> answerA = [
+    'światło',
+    'wodór',
+    'nie ma czegoś takiego',
+  ];
+
+  List<String> answerB = [
+    'chlorek żelaza (III)',
+    'nie odróżnimy',
+    'stężony kwas azotowy zmieszany ze stężonym kwasem siarkowym',
+  ];
+
+  List<String> answerC = [
+    'stężony kwas siarkowy',
+    'wodorotlenek miedzi (II)',
+    'kwas azotowy (III)',
+  ];
+
+  List<String> answerD = [
+    'nie są wymagane szczególne warunki',
+    'stężony kwas azotowy',
+    'zmieszany kwas azotowy (III) i kwas azotowy (V)',
   ];
 
   int questionNumber = 0;
@@ -63,7 +87,9 @@ class _QuizScreenState extends State<QuizScreen> {
                       questionNumber++;
                     });
                   },
-                  child: Text('A'),
+                  child: Text(
+                    answerA[questionNumber],
+                  ),
                 ),
               ),
             ),
@@ -84,7 +110,9 @@ class _QuizScreenState extends State<QuizScreen> {
                     questionNumber++;
                   });
                 },
-                child: Text('B'),
+                child: Text(
+                  answerB[questionNumber],
+                ),
               ),
             ),
           ),
@@ -104,7 +132,9 @@ class _QuizScreenState extends State<QuizScreen> {
                     questionNumber++;
                   });
                 },
-                child: Text('C'),
+                child: Text(
+                  answerC[questionNumber],
+                ),
               ),
             ),
           ),
@@ -124,7 +154,9 @@ class _QuizScreenState extends State<QuizScreen> {
                     questionNumber++;
                   });
                 },
-                child: Text('D'),
+                child: Text(
+                  answerD[questionNumber],
+                ),
               ),
             ),
           ),
