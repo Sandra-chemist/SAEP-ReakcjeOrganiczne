@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/screens/welcome_screen.dart';
+import 'package:saep_reakcje_organiczne/constants.dart';
+import 'package:saep_reakcje_organiczne/components/rounded_button.dart';
+import 'package:saep_reakcje_organiczne/screens/quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -35,9 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.lightGreen,
         leading: null,
         actions: [
           IconButton(
@@ -48,7 +50,36 @@ class _HomeScreenState extends State<HomeScreen> {
               }),
         ],
       ),
-      body: SafeArea(child: Column()),
+      body: Scaffold(
+        backgroundColor: Colors.white,
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Column(
+                children: const [
+                  Text(
+                    'Reakcje w chemii organicznej!',
+                    textAlign: TextAlign.justify,
+                    style: kTitleStyle,
+                  ),
+                ],
+              ),
+              RoundedButton(
+                  title: 'NAUKA', screenId: '', colour: Colors.lightGreen),
+              RoundedButton(
+                  title: 'QUIZ',
+                  screenId: QuizScreen.id,
+                  colour: Colors.lightGreen),
+              RoundedButton(
+                  title: 'PUNKTY', screenId: '', colour: Colors.lightGreen),
+              kAuthorName,
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

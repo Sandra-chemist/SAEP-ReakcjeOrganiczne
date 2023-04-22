@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saep_reakcje_organiczne/screens/quiz_screen.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/registration_screen.dart';
 import 'screens/login_screen.dart';
@@ -20,6 +21,7 @@ class ChemicalApp extends StatelessWidget {
         RegistrationScreen.id: (context) => RegistrationScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         HomeScreen.id: (context) => HomeScreen(),
+        QuizScreen.id: (context) => QuizScreen(),
       },
     );
   }
