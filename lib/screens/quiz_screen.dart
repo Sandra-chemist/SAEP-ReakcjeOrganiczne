@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/components/quiz_brain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -21,21 +22,45 @@ class _QuizScreenState extends State<QuizScreen> {
   void checkAnswer(String userPickedAnswer) {
     String correctAnswer = quizBrain.getQuestionAnswer();
 
-    setState(() {
-      if (userPickedAnswer == correctAnswer) {
-        scoreKeeper.add(const Icon(
-          Icons.check,
-          color: Colors.green,
-        ));
-        Score.score++;
-      } else {
-        scoreKeeper.add(const Icon(
-          Icons.close,
-          color: Colors.red,
-        ));
-      }
-      quizBrain.nextQuestion();
-    });
+    setState(
+      () {
+        if (quizBrain.isFinished() == true) {
+          Alert(
+            context: context,
+            type: AlertType.warning,
+            title: "Koniec!",
+            desc: "Dotarłeś do końca quizu",
+            buttons: [
+              DialogButton(
+                onPressed: () => Navigator.pop(context),
+                color: const Color.fromRGBO(0, 179, 134, 1.0),
+                child: const Text(
+                  "ZAKOŃCZ",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              ),
+            ],
+          ).show();
+          quizBrain.reset();
+          scoreKeeper = [];
+          Score.score = 0;
+        } else {
+          if (userPickedAnswer == correctAnswer) {
+            scoreKeeper.add(const Icon(
+              Icons.check,
+              color: Colors.green,
+            ));
+            Score.score++;
+          } else {
+            scoreKeeper.add(const Icon(
+              Icons.close,
+              color: Colors.red,
+            ));
+          }
+          quizBrain.nextQuestion();
+        }
+      },
+    );
   }
 
   @override
