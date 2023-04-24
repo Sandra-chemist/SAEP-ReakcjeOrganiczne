@@ -84,80 +84,10 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             ),
           ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(10.0),
-              child: SizedBox(
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.lightGreen,
-                    elevation: 5.0,
-                  ),
-                  onPressed: () {
-                    checkAnswer('A');
-                  },
-                  child: Text(
-                    quizBrain.getAnswerA(),
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(10.0),
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.lightGreen,
-                  elevation: 5.0,
-                ),
-                onPressed: () {
-                  checkAnswer('B');
-                },
-                child: Text(
-                  quizBrain.getAnswerB(),
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(10.0),
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.lightGreen,
-                  elevation: 5.0,
-                ),
-                onPressed: () {
-                  checkAnswer('C');
-                },
-                child: Text(
-                  quizBrain.getAnswerC(),
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(10.0),
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.lightGreen,
-                  elevation: 5.0,
-                ),
-                onPressed: () {
-                  checkAnswer('D');
-                },
-                child: Text(
-                  quizBrain.getAnswerD(),
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-          ),
+          answerButton('A', quizBrain.getAnswerA()),
+          answerButton('B', quizBrain.getAnswerB()),
+          answerButton('C', quizBrain.getAnswerC()),
+          answerButton('D', quizBrain.getAnswerD()),
           Row(
             children: scoreKeeper,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -168,7 +98,7 @@ class _QuizScreenState extends State<QuizScreen> {
               Text(
                 'SUMA PUNKTÓW: ' + Score.score.toString(),
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.green,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold),
@@ -176,6 +106,29 @@ class _QuizScreenState extends State<QuizScreen> {
             ]),
           ),
         ],
+      ),
+    );
+  }
+
+  Expanded answerButton(String letter, String answer) {
+    return Expanded(
+      child: Padding(
+        padding: EdgeInsets.all(10.0),
+        child: SizedBox(
+          child: TextButton(
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.lightGreen,
+              elevation: 5.0,
+            ),
+            onPressed: () {
+              checkAnswer(letter);
+            },
+            child: Text(
+              answer,
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
       ),
     );
   }
