@@ -16,15 +16,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen[400],
+      backgroundColor: Colors.lightBlue[400],
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Column(
               children: [
+                const Image(
+                  height: 150.0,
+                  image: AssetImage('images/chemical_compounds.png'),
+                ),
                 CircleAvatar(
                   radius: 103.0,
                   backgroundColor: Colors.green[900],
@@ -33,7 +37,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     backgroundImage: AssetImage('images/logo_appka.png'),
                   ),
                 ),
-                Text(
+                const SizedBox(
+                  height: 30.0,
+                ),
+                const Text(
                   'Reakcje w chemii organicznej!',
                   textAlign: TextAlign.justify,
                   style: kTitleStyle,
