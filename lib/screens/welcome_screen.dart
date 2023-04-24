@@ -26,7 +26,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Column(
               children: [
                 const SizedBox(
-                  height: 30.0,
+                  height: 20.0,
                 ),
                 Container(
                   decoration: kLogoDecoration,
