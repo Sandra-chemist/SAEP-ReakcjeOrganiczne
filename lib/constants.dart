@@ -49,3 +49,7 @@ const kMaterialButtonStyle = TextStyle(
   color: const Color(0XFF3a86ff),
   fontWeight: FontWeight.bold,
 );
+
+const kUnderlineInputBorder = UnderlineInputBorder(
+  borderSide: BorderSide(color: Colors.white),
+);
