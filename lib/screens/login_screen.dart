@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:saep_reakcje_organiczne/constants.dart';
 import 'package:saep_reakcje_organiczne/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -18,7 +19,19 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Color(0xFF3a57ff),
+        leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_circle_left_rounded,
+              size: 30.0,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
+      ),
+      backgroundColor: const Color(0XFF3a86ff),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -26,28 +39,16 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Column(
-              children: [
+              children: const [
                 Text(
                   'LOGOWANIE',
                   textAlign: TextAlign.justify,
-                  style: TextStyle(
-                      fontSize: 30.0,
-                      fontFamily: 'Handlee',
-                      color: Colors.green[900]),
+                  style: kTitleStyle,
                 ),
               ],
             ),
-            IconButton(
-                icon: const Icon(
-                  Icons.arrow_circle_left_rounded,
-                  size: 40.0,
-                  color: Colors.lightGreen,
-                ),
-                onPressed: () {
-                  _auth.signOut();
-                  Navigator.pop(context);
-                }),
             TextField(
+              style: TextStyle(color: Colors.white),
               keyboardType: TextInputType.emailAddress,
               textAlign: TextAlign.center,
               onChanged: (value) {
@@ -55,24 +56,35 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               decoration: const InputDecoration(
                   hintText: 'E-mail',
+                  hintStyle: TextStyle(color: Colors.white),
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0)),
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  )),
             ),
             TextField(
+              style: TextStyle(color: Colors.white),
               obscureText: true,
               textAlign: TextAlign.center,
               onChanged: (value) {
                 password = value;
               },
               decoration: const InputDecoration(
-                  hintText: 'Hasło',
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0)),
+                hintText: 'Hasło',
+                hintStyle: TextStyle(color: Colors.white),
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white),
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.white,
+                borderRadius: BorderRadius.circular(25.0),
+                color: const Color(0xFFbde0fe),
                 child: MaterialButton(
                   onPressed: () async {
                     print(email);
@@ -92,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(
                         fontFamily: 'Handlee',
                         fontSize: 25.0,
-                        color: Colors.green[900],
+                        color: const Color(0XFF3a86ff),
                         fontWeight: FontWeight.bold),
                   ),
                 ),
