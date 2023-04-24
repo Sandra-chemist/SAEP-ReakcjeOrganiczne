@@ -62,4 +62,8 @@ flutter:
     - family: Handlee
       fonts:
        - asset: fonts/Handlee-Regular.ttf
+    - family: Kalam
+      fonts:
+      - asset: fonts/Kalam-Light.ttf
+
 

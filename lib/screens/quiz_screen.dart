@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/components/quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:saep_reakcje_organiczne/constants.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -48,7 +49,7 @@ class _QuizScreenState extends State<QuizScreen> {
           if (userPickedAnswer == correctAnswer) {
             scoreKeeper.add(const Icon(
               Icons.check,
-              color: Colors.green,
+              color: Colors.white,
             ));
             Score.score++;
           } else {
@@ -66,7 +67,7 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kBackgroundColor,
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -79,7 +80,8 @@ class _QuizScreenState extends State<QuizScreen> {
                 child: Text(
                   quizBrain.getQuestionText(),
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 25.0, color: Colors.green),
+                  style: TextStyle(
+                      fontSize: 25.0, color: Colors.white, fontFamily: 'Kalam'),
                 ),
               ),
             ),
@@ -99,7 +101,8 @@ class _QuizScreenState extends State<QuizScreen> {
                 'SUMA PUNKTÓW: ' + Score.score.toString(),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                    color: Colors.green,
+                    fontFamily: 'Kalam',
+                    color: Colors.white,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold),
               ),
@@ -115,17 +118,24 @@ class _QuizScreenState extends State<QuizScreen> {
       child: Padding(
         padding: EdgeInsets.all(10.0),
         child: SizedBox(
-          child: TextButton(
-            style: TextButton.styleFrom(
-              backgroundColor: Colors.lightGreen,
-              elevation: 5.0,
-            ),
-            onPressed: () {
-              checkAnswer(letter);
-            },
-            child: Text(
-              answer,
-              style: TextStyle(color: Colors.white),
+          child: Material(
+            color: const Color(0xFFbde0fe),
+            borderRadius: BorderRadius.circular(25.0),
+            elevation: 6.0,
+            child: MaterialButton(
+              onPressed: () {
+                checkAnswer(letter);
+              },
+              child: Text(
+                answer,
+                style: const TextStyle(
+                  fontFamily: 'Kalam',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17.0,
+                  color: Color(0XFF3a86ff),
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ),
