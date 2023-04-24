@@ -25,12 +25,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: [
             Column(
               children: [
-                const Image(
-                  height: 150.0,
-                  image: AssetImage('images/chemical_compounds.png'),
-                ),
                 const SizedBox(
-                  height: 20.0,
+                  height: 30.0,
                 ),
                 Container(
                   decoration: kLogoDecoration,
@@ -39,8 +35,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     backgroundImage: AssetImage('images/logo.png'),
                   ),
                 ),
-                const SizedBox(
-                  height: 40.0,
+                const Image(
+                  height: 150.0,
+                  image: AssetImage('images/chemical_compounds.png'),
                 ),
                 const Text(
                   'Reakcje w chemii organicznej!',
