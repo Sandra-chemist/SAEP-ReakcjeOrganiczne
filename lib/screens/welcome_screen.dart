@@ -16,7 +16,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFF3a86ff),
+      backgroundColor: const Color(0XFF3a86ff),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
@@ -29,14 +29,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 150.0,
                   image: AssetImage('images/chemical_compounds.png'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
                 Container(
                   decoration: kLogoDecoration,
                   child: const CircleAvatar(
                     radius: 100.0,
-                    backgroundImage: AssetImage('images/logo_appka.png'),
+                    backgroundImage: AssetImage('images/logo.png'),
                   ),
                 ),
                 const SizedBox(
@@ -55,12 +55,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             RoundedButton(
               title: 'Logowanie',
               screenId: LoginScreen.id,
-              colour: Color(0xFFbde0fe),
+              colour: const Color(0xFFbde0fe),
             ),
             RoundedButton(
               title: 'Rejestracja',
               screenId: RegistrationScreen.id,
-              colour: Color(0xFFbde0fe),
+              colour: const Color(0xFFbde0fe),
             ),
             const SizedBox(
               height: 50.0,
