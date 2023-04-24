@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightGreen,
+        backgroundColor: Color(0xFF3a57ff),
         leading: null,
         actions: [
           IconButton(
@@ -51,15 +51,18 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: kBackgroundColor,
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Column(
                 children: const [
+                  SizedBox(
+                    height: 30.0,
+                  ),
                   Text(
                     'Reakcje w chemii organicznej!',
                     textAlign: TextAlign.justify,
@@ -67,15 +70,33 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 20.0,
+              ),
               RoundedButton(
-                  title: 'NAUKA', screenId: '', colour: Colors.lightGreen),
+                title: 'NAUKA',
+                screenId: '',
+                colour: kRoundedButtonColor,
+              ),
               RoundedButton(
                   title: 'QUIZ',
                   screenId: QuizScreen.id,
-                  colour: Colors.lightGreen),
-              RoundedButton(
-                  title: 'PUNKTY', screenId: '', colour: Colors.lightGreen),
+                  colour: kRoundedButtonColor),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const Expanded(
+                child: Image(
+                  image: AssetImage('images/flask_4.png'),
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
               kAuthorName,
+              const SizedBox(
+                height: 10.0,
+              ),
             ],
           ),
         ),

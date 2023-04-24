@@ -53,3 +53,7 @@ const kMaterialButtonStyle = TextStyle(
 const kUnderlineInputBorder = UnderlineInputBorder(
   borderSide: BorderSide(color: Colors.white),
 );
+
+const kBackgroundColor = const Color(0XFF3a86ff);
+
+const kRoundedButtonColor = const Color(0xFFbde0fe);

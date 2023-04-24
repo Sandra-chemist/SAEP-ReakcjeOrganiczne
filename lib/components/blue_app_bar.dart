@@ -6,9 +6,8 @@ class BlueAppBar extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       backgroundColor: Color(0xFF3a57ff),
       leading: IconButton(
-        icon: Icon(
-          Icons.arrow_circle_left_rounded,
-          size: 30.0,
+        icon: const Icon(
+          Icons.arrow_back_outlined,
           color: Colors.white,
         ),
         onPressed: () {
