@@ -16,7 +16,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue[400],
+      backgroundColor: Color(0XFF3a86ff),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
@@ -29,33 +29,51 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 150.0,
                   image: AssetImage('images/chemical_compounds.png'),
                 ),
-                CircleAvatar(
-                  radius: 103.0,
-                  backgroundColor: Colors.green[900],
+                SizedBox(
+                  height: 20.0,
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 5,
+                        color: Colors.black26,
+                        spreadRadius: 3,
+                      )
+                    ],
+                  ),
                   child: const CircleAvatar(
                     radius: 100.0,
                     backgroundImage: AssetImage('images/logo_appka.png'),
                   ),
                 ),
                 const SizedBox(
-                  height: 30.0,
+                  height: 40.0,
                 ),
                 const Text(
                   'Reakcje w chemii organicznej!',
                   textAlign: TextAlign.justify,
                   style: kTitleStyle,
                 ),
+                const SizedBox(
+                  height: 20.0,
+                ),
               ],
             ),
             RoundedButton(
               title: 'Logowanie',
               screenId: LoginScreen.id,
-              colour: Colors.white,
+              colour: Color(0xFFbde0fe),
             ),
             RoundedButton(
               title: 'Rejestracja',
               screenId: RegistrationScreen.id,
-              colour: Colors.white,
+              colour: Color(0xFFbde0fe),
+            ),
+            const SizedBox(
+              height: 50.0,
             ),
             kAuthorName,
           ],
