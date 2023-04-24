@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:saep_reakcje_organiczne/screens/home_screen.dart';
+import 'package:saep_reakcje_organiczne/components/blue_app_bar.dart';
+import 'package:saep_reakcje_organiczne/constants.dart';
+import 'package:saep_reakcje_organiczne/components/text_field_of_input.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static const String id = 'registration_screen';
@@ -12,75 +15,47 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
-  late String email;
-  late String password;
+  late String email = '';
+  late String password = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: BlueAppBar(),
+      backgroundColor: const Color(0XFF3a86ff),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Column(
-              children: [
+              children: const [
+                SizedBox(
+                  height: 50.0,
+                ),
                 Text(
                   'REJESTRACJA',
                   textAlign: TextAlign.justify,
-                  style: TextStyle(
-                      fontSize: 30.0,
-                      fontFamily: 'Handlee',
-                      color: Colors.green[900]),
+                  style: kTitleStyle,
                 ),
               ],
             ),
-            IconButton(
-                icon: const Icon(
-                  Icons.arrow_circle_left_rounded,
-                  size: 40.0,
-                  color: Colors.lightGreen,
-                ),
-                onPressed: () {
-                  _auth.signOut();
-                  Navigator.pop(context);
-                }),
-            TextField(
-              keyboardType: TextInputType.emailAddress,
-              textAlign: TextAlign.center,
-              onChanged: (value) {
-                email = value;
-              },
-              decoration: const InputDecoration(
-                  hintText: 'E-mail',
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0)),
-            ),
-            TextField(
-              obscureText: true,
-              textAlign: TextAlign.center,
-              onChanged: (value) {
-                password = value;
-              },
-              decoration: const InputDecoration(
-                  hintText: 'Hasło',
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0)),
+            TextFieldOfInput(value: email, title: 'E-mail'),
+            TextFieldOfInput(value: password, title: 'Password'),
+            const SizedBox(
+              height: 10.0,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.white,
+                borderRadius: BorderRadius.circular(25.0),
+                color: const Color(0xFFbde0fe),
                 child: MaterialButton(
                   onPressed: () async {
-                    print(email);
-                    print(password);
                     try {
-                      final newUser =
-                          await _auth.createUserWithEmailAndPassword(
-                              email: email, password: password);
+                      final newUser = await _auth.signInWithEmailAndPassword(
+                          email: email, password: password);
                       if (newUser != null) {
                         Navigator.pushNamed(context, HomeScreen.id);
                       }
@@ -88,17 +63,25 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       print(e);
                     }
                   },
-                  child: Text(
-                    'Zarejestruj',
-                    style: TextStyle(
-                        fontFamily: 'Handlee',
-                        fontSize: 25.0,
-                        color: Colors.green[900],
-                        fontWeight: FontWeight.bold),
+                  child: const Text(
+                    'Rejestruj',
+                    style: kMaterialButtonStyle,
                   ),
                 ),
               ),
             ),
+            const Expanded(
+              child: Image(
+                image: AssetImage('images/flask_2.png'),
+              ),
+            ),
+            const SizedBox(
+              height: 5.0,
+            ),
+            kAuthorName,
+            const SizedBox(
+              height: 10.0,
+            )
           ],
         ),
       ),
