@@ -42,3 +42,10 @@ const kLogoDecoration = BoxDecoration(
     )
   ],
 );
+
+const kMaterialButtonStyle = TextStyle(
+  fontFamily: 'Handlee',
+  fontSize: 25.0,
+  color: const Color(0XFF3a86ff),
+  fontWeight: FontWeight.bold,
+);
