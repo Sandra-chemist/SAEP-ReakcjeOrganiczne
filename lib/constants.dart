@@ -30,3 +30,15 @@ const kAuthorName = Text(
     ],
   ),
 );
+
+const kLogoDecoration = BoxDecoration(
+  color: Colors.white,
+  shape: BoxShape.circle,
+  boxShadow: [
+    BoxShadow(
+      blurRadius: 5,
+      color: Colors.black26,
+      spreadRadius: 3,
+    )
+  ],
+);

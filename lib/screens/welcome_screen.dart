@@ -33,17 +33,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 20.0,
                 ),
                 Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 5,
-                        color: Colors.black26,
-                        spreadRadius: 3,
-                      )
-                    ],
-                  ),
+                  decoration: kLogoDecoration,
                   child: const CircleAvatar(
                     radius: 100.0,
                     backgroundImage: AssetImage('images/logo_appka.png'),
