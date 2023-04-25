@@ -15,18 +15,19 @@ class RoundedButton extends StatelessWidget {
       child: Material(
         color: colour,
         borderRadius: BorderRadius.circular(25.0),
-        elevation: 5.0,
+        elevation: 6.0,
         child: MaterialButton(
           onPressed: () {
             Navigator.pushNamed(context, screenId);
           },
           child: Text(
             title,
-            style: TextStyle(
-                fontFamily: 'Handlee',
-                fontSize: 25.0,
-                color: Colors.green[900],
-                fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontFamily: 'Handlee',
+              fontSize: 25.0,
+              color: Color(0XFF3a86ff),
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),

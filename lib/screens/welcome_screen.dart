@@ -16,39 +16,51 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen[400],
+      backgroundColor: kBackgroundColor,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Column(
               children: [
-                CircleAvatar(
-                  radius: 103.0,
-                  backgroundColor: Colors.green[900],
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Container(
+                  decoration: kLogoDecoration,
                   child: const CircleAvatar(
                     radius: 100.0,
-                    backgroundImage: AssetImage('images/logo_appka.png'),
+                    backgroundImage: AssetImage('images/logo.png'),
                   ),
                 ),
-                Text(
+                const Image(
+                  height: 150.0,
+                  image: AssetImage('images/chemical_compounds.png'),
+                ),
+                const Text(
                   'Reakcje w chemii organicznej!',
                   textAlign: TextAlign.justify,
                   style: kTitleStyle,
+                ),
+                const SizedBox(
+                  height: 20.0,
                 ),
               ],
             ),
             RoundedButton(
               title: 'Logowanie',
               screenId: LoginScreen.id,
-              colour: Colors.white,
+              colour: const Color(0xFFbde0fe),
             ),
             RoundedButton(
               title: 'Rejestracja',
               screenId: RegistrationScreen.id,
-              colour: Colors.white,
+              colour: const Color(0xFFbde0fe),
+            ),
+            const SizedBox(
+              height: 50.0,
             ),
             kAuthorName,
           ],
