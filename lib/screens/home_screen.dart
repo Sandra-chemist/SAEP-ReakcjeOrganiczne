@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:saep_reakcje_organiczne/screens/science_screen.dart';
 import 'package:saep_reakcje_organiczne/screens/welcome_screen.dart';
 import 'package:saep_reakcje_organiczne/constants.dart';
 import 'package:saep_reakcje_organiczne/components/rounded_button.dart';
@@ -75,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               RoundedButton(
                 title: 'NAUKA',
-                screenId: '',
+                screenId: ScienceScreen.id,
                 colour: kRoundedButtonColor,
               ),
               RoundedButton(
