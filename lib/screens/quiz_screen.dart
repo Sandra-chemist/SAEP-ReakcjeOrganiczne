@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/components/quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:saep_reakcje_organiczne/constants.dart';
-import 'package:saep_reakcje_organiczne/screens/home_screen.dart';
+import 'package:saep_reakcje_organiczne/components/blue_app_bar.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -54,15 +54,6 @@ class _QuizScreenState extends State<QuizScreen> {
                 onPressed: () => Navigator.pop(context),
                 color: kBackgroundColor,
                 child: const Text(
-                  "PONÓW",
-                  style: TextStyle(
-                      color: Colors.white, fontSize: 20, fontFamily: 'Kalam'),
-                ),
-              ),
-              DialogButton(
-                onPressed: () => Navigator.pushNamed(context, HomeScreen.id),
-                color: kBackgroundColor,
-                child: const Text(
                   "ZAKOŃCZ",
                   style: TextStyle(
                       color: Colors.white, fontSize: 20, fontFamily: 'Kalam'),
@@ -95,6 +86,7 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: BlueAppBar(),
       backgroundColor: kBackgroundColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
