@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/components/quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -13,12 +15,10 @@ class QuizScreen extends StatefulWidget {
   _QuizScreenState createState() => _QuizScreenState();
 }
 
-class Score {
-  static int score = 0;
-}
-
 class _QuizScreenState extends State<QuizScreen> {
   List<Icon> scoreKeeper = [];
+  int score = 0;
+  int points = quizBrain.getQuestionNumber();
 
   void checkAnswer(String userPickedAnswer) {
     String correctAnswer = quizBrain.getQuestionAnswer();
@@ -26,11 +26,23 @@ class _QuizScreenState extends State<QuizScreen> {
     setState(
       () {
         if (quizBrain.isFinished() == true) {
+          if (userPickedAnswer == correctAnswer) {
+            scoreKeeper.add(const Icon(
+              Icons.check,
+              color: Colors.white,
+            ));
+            score++;
+          } else {
+            scoreKeeper.add(const Icon(
+              Icons.close,
+              color: Colors.red,
+            ));
+          }
           Alert(
             context: context,
             type: AlertType.warning,
             title: "Koniec!",
-            desc: "Dotarłeś do końca quizu",
+            desc: "Suma punktów: $score / $points",
             buttons: [
               DialogButton(
                 onPressed: () => Navigator.pop(context),
@@ -44,14 +56,14 @@ class _QuizScreenState extends State<QuizScreen> {
           ).show();
           quizBrain.reset();
           scoreKeeper = [];
-          Score.score = 0;
+          score = 0;
         } else {
           if (userPickedAnswer == correctAnswer) {
             scoreKeeper.add(const Icon(
               Icons.check,
               color: Colors.white,
             ));
-            Score.score++;
+            score++;
           } else {
             scoreKeeper.add(const Icon(
               Icons.close,
@@ -69,7 +81,7 @@ class _QuizScreenState extends State<QuizScreen> {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
@@ -98,7 +110,7 @@ class _QuizScreenState extends State<QuizScreen> {
             padding: EdgeInsets.all(10.0),
             child: Column(children: [
               Text(
-                'SUMA PUNKTÓW: ' + Score.score.toString(),
+                'SUMA PUNKTÓW: ' + score.toString(),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                     fontFamily: 'Kalam',
