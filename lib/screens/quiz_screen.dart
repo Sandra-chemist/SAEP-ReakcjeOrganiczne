@@ -1,9 +1,8 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/components/quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:saep_reakcje_organiczne/constants.dart';
+import 'package:saep_reakcje_organiczne/screens/home_screen.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -39,17 +38,34 @@ class _QuizScreenState extends State<QuizScreen> {
             ));
           }
           Alert(
+            style: const AlertStyle(
+              descStyle: kAlertStyle,
+              titleStyle: kAlertStyle,
+            ),
             context: context,
-            type: AlertType.warning,
-            title: "Koniec!",
-            desc: "Suma punktów: $score / $points",
+            content: const Image(
+              image: AssetImage('images/chemistry_cat.png'),
+            ),
+            //  type: AlertType.warning,
+            title: "KONIEC!",
+            desc: "Punkty: $score / $points",
             buttons: [
               DialogButton(
                 onPressed: () => Navigator.pop(context),
-                color: const Color.fromRGBO(0, 179, 134, 1.0),
+                color: kBackgroundColor,
+                child: const Text(
+                  "PONÓW",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 20, fontFamily: 'Kalam'),
+                ),
+              ),
+              DialogButton(
+                onPressed: () => Navigator.pushNamed(context, HomeScreen.id),
+                color: kBackgroundColor,
                 child: const Text(
                   "ZAKOŃCZ",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 20, fontFamily: 'Kalam'),
                 ),
               ),
             ],
@@ -87,12 +103,12 @@ class _QuizScreenState extends State<QuizScreen> {
           Expanded(
             flex: 4,
             child: Padding(
-              padding: EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(5.0),
               child: Center(
                 child: Text(
                   quizBrain.getQuestionText(),
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 25.0, color: Colors.white, fontFamily: 'Kalam'),
                 ),
               ),
@@ -102,23 +118,15 @@ class _QuizScreenState extends State<QuizScreen> {
           answerButton('B', quizBrain.getAnswerB()),
           answerButton('C', quizBrain.getAnswerC()),
           answerButton('D', quizBrain.getAnswerD()),
+          const SizedBox(
+            height: 20.0,
+          ),
           Row(
             children: scoreKeeper,
             mainAxisAlignment: MainAxisAlignment.center,
           ),
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Column(children: [
-              Text(
-                'SUMA PUNKTÓW: ' + score.toString(),
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                    fontFamily: 'Kalam',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold),
-              ),
-            ]),
+          const SizedBox(
+            height: 20.0,
           ),
         ],
       ),
@@ -128,7 +136,7 @@ class _QuizScreenState extends State<QuizScreen> {
   Expanded answerButton(String letter, String answer) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: SizedBox(
           child: Material(
             color: const Color(0xFFbde0fe),

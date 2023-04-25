@@ -57,3 +57,9 @@ const kUnderlineInputBorder = UnderlineInputBorder(
 const kBackgroundColor = const Color(0XFF3a86ff);
 
 const kRoundedButtonColor = const Color(0xFFbde0fe);
+
+const kAlertStyle = TextStyle(
+  fontFamily: 'Kalam',
+  fontWeight: FontWeight.bold,
+  fontSize: 27.0,
+);
