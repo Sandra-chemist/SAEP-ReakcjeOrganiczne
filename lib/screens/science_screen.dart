@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/components/blue_app_bar.dart';
+import 'package:saep_reakcje_organiczne/constants.dart';
 
 class ScienceScreen extends StatefulWidget {
   static const String id = 'science_screen';
@@ -24,7 +25,7 @@ class _ScienceScreenState extends State<ScienceScreen> {
             color: Colors.black,
             child: Text(
               'Reakcja fenolu z jonami żelaza(III)',
-              style: TextStyle(fontFamily: 'Kalam', fontSize: 20.0),
+              style: kTitleReactionStyle,
             ),
           ),
           Expanded(
