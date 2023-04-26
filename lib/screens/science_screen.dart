@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/components/blue_app_bar.dart';
 import 'package:saep_reakcje_organiczne/constants.dart';
+import 'package:saep_reakcje_organiczne/components/science_brain.dart';
+
+ScienceBrain scienceBrain = ScienceBrain();
 
 class ScienceScreen extends StatefulWidget {
   static const String id = 'science_screen';
@@ -11,6 +14,19 @@ class ScienceScreen extends StatefulWidget {
 }
 
 class _ScienceScreenState extends State<ScienceScreen> {
+  void nextChemicalReaction() {
+    setState(
+      () {
+        if (scienceBrain.isFinished() == true) {
+          print('Koniec');
+          scienceBrain.reset();
+        } else {
+          scienceBrain.nextReaction();
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,14 +40,15 @@ class _ScienceScreenState extends State<ScienceScreen> {
           Title(
             color: Colors.black,
             child: Text(
-              'Reakcja fenolu z jonami żelaza(III)',
+              scienceBrain.getReactionTitle(),
               style: kTitleReactionStyle,
             ),
           ),
           Expanded(
             child: Padding(
               padding: EdgeInsets.all(15.0),
-              child: Image(image: AssetImage('images/phenol.png')),
+              child:
+                  Image(image: AssetImage(scienceBrain.getReactionEquation())),
             ),
           ),
           Expanded(
@@ -43,7 +60,7 @@ class _ScienceScreenState extends State<ScienceScreen> {
                 ),
                 child: Center(
                   child: Text(
-                    'Reakcja zachodzi',
+                    scienceBrain.getDescriptionReaction(),
                     style: TextStyle(
                       fontFamily: 'Kalam',
                       color: Colors.white,
@@ -57,8 +74,10 @@ class _ScienceScreenState extends State<ScienceScreen> {
             color: Color(0XFF3a86ff),
             borderRadius: BorderRadius.circular(20.0),
             elevation: 5,
-            child: const MaterialButton(
-              onPressed: null,
+            child: MaterialButton(
+              onPressed: () {
+                nextChemicalReaction();
+              },
               child: Icon(
                 Icons.double_arrow_outlined,
                 color: Colors.white,
