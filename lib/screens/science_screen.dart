@@ -52,6 +52,13 @@ class _ScienceScreenState extends State<ScienceScreen> {
           ),
           Expanded(
             child: Padding(
+              padding: EdgeInsets.all(5.0),
+              child: Image(
+                  image: AssetImage(scienceBrain.getReactionInTestTube())),
+            ),
+          ),
+          Expanded(
+            child: Padding(
               padding: EdgeInsets.symmetric(vertical: 5.0),
               child: Container(
                 decoration: BoxDecoration(

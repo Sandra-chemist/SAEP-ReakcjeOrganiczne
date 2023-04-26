@@ -7,23 +7,28 @@ class ScienceBrain {
     Science(
         titleReaction: 'Reakcja fenolu z jonami żelaza(III)',
         descriptionReaction: 'Reakcja zachodzi',
-        reactionEquation: 'images/phenol.png'),
+        reactionEquation: 'images/phenol.png',
+        reactionInTestTube: 'images/test_tube_phenol.png'),
     Science(
         titleReaction: 'Reakcja glikolu z wodorotlenkiem miedzi(II)',
         descriptionReaction: 'dffffdf',
-        reactionEquation: 'images/glycol.png'),
+        reactionEquation: 'images/glycol.png',
+        reactionInTestTube: 'images/test_tube_glycol.png'),
     Science(
         titleReaction: 'Reakcja fenolu z wodą bromową',
         descriptionReaction: 'fddsfreawe',
-        reactionEquation: 'images/phenol_2.png'),
+        reactionEquation: 'images/phenol_2.png',
+        reactionInTestTube: 'images/test_tube_phenol_2.png'),
     Science(
         titleReaction: 'Próba jodoformowa',
         descriptionReaction: 'fddsfreawe',
-        reactionEquation: 'images/iodoform.png'),
+        reactionEquation: 'images/iodoform.png',
+        reactionInTestTube: 'images/test_tube_iodoform.png'),
     Science(
         titleReaction: 'Reakcja glukozy z wodą bromową',
         descriptionReaction: 'fddsfreawe',
-        reactionEquation: 'images/glucose.png'),
+        reactionEquation: 'images/glucose.png',
+        reactionInTestTube: 'images/test_tube_glucose.png'),
   ];
 
   void nextReaction() {
@@ -46,6 +51,10 @@ class ScienceBrain {
 
   String getReactionEquation() {
     return _scienceBank[_reactionNumber].reactionEquation;
+  }
+
+  String getReactionInTestTube() {
+    return _scienceBank[_reactionNumber].reactionInTestTube;
   }
 
   bool isFinished() {
