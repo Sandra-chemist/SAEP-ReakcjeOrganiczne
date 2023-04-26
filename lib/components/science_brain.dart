@@ -11,11 +11,19 @@ class ScienceBrain {
     Science(
         titleReaction: 'Reakcja glikolu z wodorotlenkiem miedzi(II)',
         descriptionReaction: 'dffffdf',
-        reactionEquation: 'images/flask_2.png'),
+        reactionEquation: 'images/glycol.png'),
     Science(
         titleReaction: 'Reakcja fenolu z wodą bromową',
         descriptionReaction: 'fddsfreawe',
-        reactionEquation: 'images/flask_4.png'),
+        reactionEquation: 'images/phenol_2.png'),
+    Science(
+        titleReaction: 'Próba jodoformowa',
+        descriptionReaction: 'fddsfreawe',
+        reactionEquation: 'images/iodoform.png'),
+    Science(
+        titleReaction: 'Reakcja glukozy z wodą bromową',
+        descriptionReaction: 'fddsfreawe',
+        reactionEquation: 'images/glucose.png'),
   ];
 
   void nextReaction() {

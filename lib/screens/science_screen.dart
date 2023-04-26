@@ -18,7 +18,6 @@ class _ScienceScreenState extends State<ScienceScreen> {
     setState(
       () {
         if (scienceBrain.isFinished() == true) {
-          print('Koniec');
           scienceBrain.reset();
         } else {
           scienceBrain.nextReaction();
