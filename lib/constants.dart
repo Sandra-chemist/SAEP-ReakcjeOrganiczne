@@ -66,7 +66,7 @@ const kAlertStyle = TextStyle(
 
 const kTitleReactionStyle = TextStyle(
   fontFamily: 'Kalam',
-  fontSize: 20.0,
+  fontSize: 22.0,
   fontWeight: FontWeight.bold,
   shadows: [
     Shadow(
@@ -75,4 +75,21 @@ const kTitleReactionStyle = TextStyle(
       color: const Color(0XFF3a86ff),
     ),
   ],
+);
+
+const kDescriptionStyle = TextStyle(
+  fontSize: 17.0,
+  fontFamily: 'Kalam',
+  color: Colors.white,
+);
+
+const kAnswerStyle = TextStyle(
+  fontSize: 18.0,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'Kalam',
+  color: const Color(0XFF3a86ff),
+);
+
+const kSizedBox = SizedBox(
+  height: 10.0,
 );

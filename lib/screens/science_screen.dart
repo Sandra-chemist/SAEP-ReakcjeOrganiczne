@@ -36,12 +36,9 @@ class _ScienceScreenState extends State<ScienceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BlueAppBar(),
-      backgroundColor: Colors.white,
       body: Column(
         children: [
-          SizedBox(
-            height: 20.0,
-          ),
+          kSizedBox,
           Title(
             color: Colors.black,
             child: Text(
@@ -49,26 +46,23 @@ class _ScienceScreenState extends State<ScienceScreen> {
               style: kTitleReactionStyle,
             ),
           ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child:
-                  Image(image: AssetImage(scienceBrain.getReactionEquation())),
+          kSizedBox,
+          addExpandedWidget(
+            Image(
+              image: AssetImage(
+                scienceBrain.getReactionEquation(),
+              ),
             ),
+          ),
+          addExpandedWidget(
+            Image(image: AssetImage(scienceBrain.getReactionInTestTube())),
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.all(5.0),
-              child: Image(
-                  image: AssetImage(scienceBrain.getReactionInTestTube())),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 5.0),
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
               child: Container(
-                decoration: BoxDecoration(
-                  color: const Color(0XFF3a86ff),
+                decoration: const BoxDecoration(
+                  color: kBackgroundColor,
                 ),
                 child: Center(
                   child: Padding(
@@ -76,11 +70,7 @@ class _ScienceScreenState extends State<ScienceScreen> {
                     child: Text(
                       scienceBrain.getDescriptionReaction(),
                       textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontFamily: 'Kalam',
-                        color: Colors.white,
-                      ),
+                      style: kDescriptionStyle,
                     ),
                   ),
                 ),
@@ -88,44 +78,46 @@ class _ScienceScreenState extends State<ScienceScreen> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 110.0),
+            padding: const EdgeInsets.symmetric(horizontal: 110.0),
             child: Row(
               children: [
-                Material(
-                  color: Color(0XFF3a86ff),
-                  borderRadius: BorderRadius.circular(20.0),
-                  elevation: 5,
-                  child: MaterialButton(
-                    onPressed: () {
-                      previousChemicalReaction();
-                    },
-                    child: Icon(
-                      Icons.keyboard_double_arrow_left_outlined,
-                      color: Colors.white,
-                    ),
-                  ),
+                addArrowButton(Icons.keyboard_double_arrow_left_outlined),
+                const SizedBox(
+                  width: 5.0,
                 ),
-                Material(
-                  color: Color(0XFF3a86ff),
-                  borderRadius: BorderRadius.circular(20.0),
-                  elevation: 5,
-                  child: MaterialButton(
-                    onPressed: () {
-                      nextChemicalReaction();
-                    },
-                    child: Icon(
-                      Icons.keyboard_double_arrow_right_outlined,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+                addArrowButton(Icons.keyboard_double_arrow_right_outlined),
               ],
             ),
           ),
-          const SizedBox(
-            height: 10.0,
-          ),
+          kSizedBox,
         ],
+      ),
+    );
+  }
+
+  Expanded addExpandedWidget(Image image) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: image,
+      ),
+    );
+  }
+
+  Material addArrowButton(IconData icon) {
+    return Material(
+      color: kBackgroundColor,
+      borderRadius: BorderRadius.circular(25.0),
+      elevation: 5,
+      child: MaterialButton(
+        onPressed: () {
+          previousChemicalReaction();
+        },
+        child: Icon(
+          icon,
+          color: Colors.white,
+          size: 35.0,
+        ),
       ),
     );
   }
