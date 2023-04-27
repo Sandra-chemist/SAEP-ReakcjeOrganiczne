@@ -114,7 +114,7 @@ class QuizScreenState extends State<QuizScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: scoreKeeper,
           ),
-          addSizeBox(20),
+          addSizeBox(30),
         ],
       ),
     );

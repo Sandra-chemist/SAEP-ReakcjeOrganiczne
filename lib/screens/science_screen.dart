@@ -68,7 +68,7 @@ class ScienceScreenState extends State<ScienceScreen> {
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 10.0, vertical: 10.0),
+                        horizontal: 10.0, vertical: 5.0),
                     child: Text(
                       scienceBrain.getDescriptionReaction(),
                       textAlign: TextAlign.justify,

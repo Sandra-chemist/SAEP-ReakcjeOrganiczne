@@ -31,7 +31,7 @@ class RegistrationScreenState extends State<RegistrationScreen> {
           children: [
             Column(
               children: [
-                addSizeBox(50),
+                addSizeBox(40),
                 const Text(
                   'REJESTRACJA',
                   textAlign: TextAlign.justify,
