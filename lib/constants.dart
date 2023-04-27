@@ -89,3 +89,9 @@ const kAnswerStyle = TextStyle(
   fontFamily: 'Kalam',
   color: const Color(0XFF3a86ff),
 );
+
+const kHintTextStyle = TextStyle(
+  color: Colors.white,
+  fontFamily: 'Kalam',
+  fontSize: 20.0,
+);
