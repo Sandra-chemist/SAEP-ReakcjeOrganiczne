@@ -89,11 +89,3 @@ const kAnswerStyle = TextStyle(
   fontFamily: 'Kalam',
   color: const Color(0XFF3a86ff),
 );
-
-const kSizedBox10 = SizedBox(
-  height: 10.0,
-);
-
-const kSizedBox20 = SizedBox(
-  height: 20.0,
-);

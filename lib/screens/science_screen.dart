@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:saep_reakcje_organiczne/components/blue_app_bar.dart';
 import 'package:saep_reakcje_organiczne/constants.dart';
 import 'package:saep_reakcje_organiczne/components/science_brain.dart';
+import 'package:saep_reakcje_organiczne/methods.dart';
 
 ScienceBrain scienceBrain = ScienceBrain();
 
@@ -38,7 +39,7 @@ class _ScienceScreenState extends State<ScienceScreen> {
       appBar: BlueAppBar(),
       body: Column(
         children: [
-          kSizedBox10,
+          addSizeBox(8),
           Title(
             color: Colors.black,
             child: Text(
@@ -46,7 +47,7 @@ class _ScienceScreenState extends State<ScienceScreen> {
               style: kTitleReactionStyle,
             ),
           ),
-          kSizedBox10,
+          addSizeBox(10),
           addExpandedWidget(
             Image(
               image: AssetImage(
@@ -89,7 +90,7 @@ class _ScienceScreenState extends State<ScienceScreen> {
               ],
             ),
           ),
-          kSizedBox10,
+          addSizeBox(10),
         ],
       ),
     );

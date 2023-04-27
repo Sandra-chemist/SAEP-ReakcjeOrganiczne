@@ -1,10 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:saep_reakcje_organiczne/methods.dart';
 import 'package:saep_reakcje_organiczne/screens/science_screen.dart';
 import 'package:saep_reakcje_organiczne/screens/welcome_screen.dart';
 import 'package:saep_reakcje_organiczne/constants.dart';
 import 'package:saep_reakcje_organiczne/components/rounded_button.dart';
 import 'package:saep_reakcje_organiczne/screens/quiz_screen.dart';
+import 'package:saep_reakcje_organiczne/methods.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -58,18 +60,16 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Column(
-                children: const [
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                  Text(
+                children: [
+                  addSizeBox(30.0),
+                  const Text(
                     'Reakcje w chemii organicznej!',
                     textAlign: TextAlign.justify,
                     style: kTitleStyle,
                   ),
                 ],
               ),
-              kSizedBox20,
+              addSizeBox(20),
               RoundedButton(
                 title: 'NAUKA',
                 screenId: ScienceScreen.id,
@@ -79,15 +79,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: 'QUIZ',
                   screenId: QuizScreen.id,
                   colour: kRoundedButtonColor),
-              kSizedBox20,
+              addSizeBox(20),
               const Expanded(
                 child: Image(
                   image: AssetImage('images/flask_4.png'),
                 ),
               ),
-              kSizedBox20,
+              addSizeBox(20),
               kAuthorName,
-              kSizedBox10,
+              addSizeBox(10),
             ],
           ),
         ),
