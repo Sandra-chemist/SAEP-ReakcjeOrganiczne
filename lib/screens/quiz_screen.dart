@@ -3,18 +3,19 @@ import 'package:saep_reakcje_organiczne/components/quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:saep_reakcje_organiczne/constants.dart';
 import 'package:saep_reakcje_organiczne/components/blue_app_bar.dart';
+import 'package:saep_reakcje_organiczne/methods.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
 class QuizScreen extends StatefulWidget {
   static const String id = 'quiz_screen';
-  QuizScreen({super.key});
+  const QuizScreen({super.key});
 
   @override
-  _QuizScreenState createState() => _QuizScreenState();
+  QuizScreenState createState() => QuizScreenState();
 }
 
-class _QuizScreenState extends State<QuizScreen> {
+class QuizScreenState extends State<QuizScreen> {
   List<Icon> scoreKeeper = [];
   int score = 0;
   int points = quizBrain.getQuestionNumber();
@@ -55,8 +56,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 color: kBackgroundColor,
                 child: const Text(
                   "ZAKOŃCZ",
-                  style: TextStyle(
-                      color: Colors.white, fontSize: 20, fontFamily: 'Kalam'),
+                  style: kHintTextStyle,
                 ),
               ),
             ],
@@ -100,32 +100,27 @@ class _QuizScreenState extends State<QuizScreen> {
                 child: Text(
                   quizBrain.getQuestionText(),
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontSize: 25.0, color: Colors.white, fontFamily: 'Kalam'),
+                  style: kQuestionTextStyle,
                 ),
               ),
             ),
           ),
-          answerButton('A', quizBrain.getAnswerA()),
-          answerButton('B', quizBrain.getAnswerB()),
-          answerButton('C', quizBrain.getAnswerC()),
-          answerButton('D', quizBrain.getAnswerD()),
-          const SizedBox(
-            height: 20.0,
-          ),
+          addAnswerButton('A', quizBrain.getAnswerA()),
+          addAnswerButton('B', quizBrain.getAnswerB()),
+          addAnswerButton('C', quizBrain.getAnswerC()),
+          addAnswerButton('D', quizBrain.getAnswerD()),
+          addSizeBox(20),
           Row(
-            children: scoreKeeper,
             mainAxisAlignment: MainAxisAlignment.center,
+            children: scoreKeeper,
           ),
-          const SizedBox(
-            height: 20.0,
-          ),
+          addSizeBox(20),
         ],
       ),
     );
   }
 
-  Expanded answerButton(String letter, String answer) {
+  Expanded addAnswerButton(String letter, String answer) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(10.0),

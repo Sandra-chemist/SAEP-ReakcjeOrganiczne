@@ -95,3 +95,9 @@ const kHintTextStyle = TextStyle(
   fontFamily: 'Kalam',
   fontSize: 20.0,
 );
+
+const kQuestionTextStyle = const TextStyle(
+  fontSize: 25.0,
+  color: Colors.white,
+  fontFamily: 'Kalam',
+);
