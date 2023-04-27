@@ -7,13 +7,13 @@ import 'package:saep_reakcje_organiczne/constants.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static const String id = 'registration_screen';
-  RegistrationScreen({super.key});
+  const RegistrationScreen({super.key});
 
   @override
-  _RegistrationScreenState createState() => _RegistrationScreenState();
+  RegistrationScreenState createState() => RegistrationScreenState();
 }
 
-class _RegistrationScreenState extends State<RegistrationScreen> {
+class RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
   late String email;
   late String password;

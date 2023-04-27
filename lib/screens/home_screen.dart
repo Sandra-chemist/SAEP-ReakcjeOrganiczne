@@ -6,17 +6,16 @@ import 'package:saep_reakcje_organiczne/screens/welcome_screen.dart';
 import 'package:saep_reakcje_organiczne/constants.dart';
 import 'package:saep_reakcje_organiczne/components/rounded_button.dart';
 import 'package:saep_reakcje_organiczne/screens/quiz_screen.dart';
-import 'package:saep_reakcje_organiczne/methods.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  HomeScreenState createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreenState extends State<HomeScreen> {
   final _auth = FirebaseAuth.instance;
   late User loggedInUser;
 

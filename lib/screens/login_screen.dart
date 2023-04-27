@@ -7,13 +7,13 @@ import 'package:saep_reakcje_organiczne/components/blue_app_bar.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  LoginScreenState createState() => LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class LoginScreenState extends State<LoginScreen> {
   final _auth = FirebaseAuth.instance;
   late String email;
   late String password;
@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Column(
               children: [
-                addSizeBox(50),
+                addSizeBox(40),
                 const Text(
                   'LOGOWANIE',
                   textAlign: TextAlign.justify,

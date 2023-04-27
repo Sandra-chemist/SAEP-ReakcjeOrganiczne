@@ -18,12 +18,12 @@ class ChemicalApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: WelcomeScreen.id,
       routes: {
-        WelcomeScreen.id: (context) => WelcomeScreen(),
-        RegistrationScreen.id: (context) => RegistrationScreen(),
-        LoginScreen.id: (context) => LoginScreen(),
-        HomeScreen.id: (context) => HomeScreen(),
-        QuizScreen.id: (context) => QuizScreen(),
-        ScienceScreen.id: (context) => ScienceScreen(),
+        WelcomeScreen.id: (context) => const WelcomeScreen(),
+        RegistrationScreen.id: (context) => const RegistrationScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
+        HomeScreen.id: (context) => const HomeScreen(),
+        QuizScreen.id: (context) => const QuizScreen(),
+        ScienceScreen.id: (context) => const ScienceScreen(),
       },
     );
   }

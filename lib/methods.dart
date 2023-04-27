@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
@@ -9,8 +8,9 @@ SizedBox addSizeBox(double heigh) {
 InputDecoration addInputDecoration(String name) {
   return InputDecoration(
     hintText: name,
-    hintStyle: TextStyle(color: Colors.white),
-    contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+    hintStyle: const TextStyle(color: Colors.white),
+    contentPadding:
+        const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
     enabledBorder: kUnderlineInputBorder,
   );
 }

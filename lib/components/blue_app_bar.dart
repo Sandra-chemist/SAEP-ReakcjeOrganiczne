@@ -4,7 +4,7 @@ class BlueAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Color(0xFF3a57ff),
+      backgroundColor: const Color(0xFF3a57ff),
       leading: IconButton(
         icon: const Icon(
           Icons.arrow_back_outlined,
@@ -18,5 +18,5 @@ class BlueAppBar extends StatelessWidget with PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

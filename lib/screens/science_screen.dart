@@ -8,13 +8,13 @@ ScienceBrain scienceBrain = ScienceBrain();
 
 class ScienceScreen extends StatefulWidget {
   static const String id = 'science_screen';
-  ScienceScreen({super.key});
+  const ScienceScreen({super.key});
 
   @override
-  _ScienceScreenState createState() => _ScienceScreenState();
+  ScienceScreenState createState() => ScienceScreenState();
 }
 
-class _ScienceScreenState extends State<ScienceScreen> {
+class ScienceScreenState extends State<ScienceScreen> {
   void nextChemicalReaction() {
     setState(
       () {
@@ -82,11 +82,13 @@ class _ScienceScreenState extends State<ScienceScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 110.0),
             child: Row(
               children: [
-                addArrowButton(Icons.keyboard_double_arrow_left_outlined),
+                addArrowButton(Icons.keyboard_double_arrow_left_outlined,
+                    previousChemicalReaction),
                 const SizedBox(
-                  width: 5.0,
+                  width: 5,
                 ),
-                addArrowButton(Icons.keyboard_double_arrow_right_outlined),
+                addArrowButton(Icons.keyboard_double_arrow_right_outlined,
+                    nextChemicalReaction),
               ],
             ),
           ),
@@ -105,15 +107,13 @@ class _ScienceScreenState extends State<ScienceScreen> {
     );
   }
 
-  Material addArrowButton(IconData icon) {
+  Material addArrowButton(IconData icon, void Function() function) {
     return Material(
       color: kBackgroundColor,
       borderRadius: BorderRadius.circular(25.0),
       elevation: 5,
       child: MaterialButton(
-        onPressed: () {
-          previousChemicalReaction();
-        },
+        onPressed: function,
         child: Icon(
           icon,
           color: Colors.white,
