@@ -44,6 +44,14 @@ class ScienceBrain {
     }
   }
 
+  void previousReaction() {
+    if (_reactionNumber == 0) {
+      _reactionNumber;
+    } else if (_reactionNumber <= _scienceBank.length - 1) {
+      _reactionNumber--;
+    }
+  }
+
   int getReactionNumber() {
     return _scienceBank.length;
   }

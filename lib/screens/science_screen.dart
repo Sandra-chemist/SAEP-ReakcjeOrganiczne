@@ -26,6 +26,12 @@ class _ScienceScreenState extends State<ScienceScreen> {
     );
   }
 
+  void previousChemicalReaction() {
+    setState(() {
+      scienceBrain.previousReaction();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,18 +87,39 @@ class _ScienceScreenState extends State<ScienceScreen> {
               ),
             ),
           ),
-          Material(
-            color: Color(0XFF3a86ff),
-            borderRadius: BorderRadius.circular(20.0),
-            elevation: 5,
-            child: MaterialButton(
-              onPressed: () {
-                nextChemicalReaction();
-              },
-              child: Icon(
-                Icons.double_arrow_outlined,
-                color: Colors.white,
-              ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 110.0),
+            child: Row(
+              children: [
+                Material(
+                  color: Color(0XFF3a86ff),
+                  borderRadius: BorderRadius.circular(20.0),
+                  elevation: 5,
+                  child: MaterialButton(
+                    onPressed: () {
+                      previousChemicalReaction();
+                    },
+                    child: Icon(
+                      Icons.keyboard_double_arrow_left_outlined,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                Material(
+                  color: Color(0XFF3a86ff),
+                  borderRadius: BorderRadius.circular(20.0),
+                  elevation: 5,
+                  child: MaterialButton(
+                    onPressed: () {
+                      nextChemicalReaction();
+                    },
+                    child: Icon(
+                      Icons.keyboard_double_arrow_right_outlined,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(
