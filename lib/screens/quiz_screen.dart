@@ -140,12 +140,7 @@ class _QuizScreenState extends State<QuizScreen> {
               },
               child: Text(
                 answer,
-                style: const TextStyle(
-                  fontFamily: 'Kalam',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17.0,
-                  color: Color(0XFF3a86ff),
-                ),
+                style: kAnswerStyle,
                 textAlign: TextAlign.center,
               ),
             ),

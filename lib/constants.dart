@@ -63,3 +63,33 @@ const kAlertStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 27.0,
 );
+
+const kTitleReactionStyle = TextStyle(
+  fontFamily: 'Kalam',
+  fontSize: 22.0,
+  fontWeight: FontWeight.bold,
+  shadows: [
+    Shadow(
+      offset: Offset(3.0, 3.0),
+      blurRadius: 8.0,
+      color: const Color(0XFF3a86ff),
+    ),
+  ],
+);
+
+const kDescriptionStyle = TextStyle(
+  fontSize: 17.0,
+  fontFamily: 'Kalam',
+  color: Colors.white,
+);
+
+const kAnswerStyle = TextStyle(
+  fontSize: 18.0,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'Kalam',
+  color: const Color(0XFF3a86ff),
+);
+
+const kSizedBox = SizedBox(
+  height: 10.0,
+);
