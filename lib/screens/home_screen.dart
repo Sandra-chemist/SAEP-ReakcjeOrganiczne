@@ -29,7 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
       final user = _auth.currentUser;
       if (user != null) {
         loggedInUser = user;
-        print(loggedInUser.email);
       }
     } catch (e) {
       print(e);
@@ -40,8 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF3a57ff),
-        leading: null,
+        backgroundColor: const Color(0xFF3a57ff),
         actions: [
           IconButton(
               icon: const Icon(Icons.close),
@@ -71,9 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20.0,
-              ),
+              kSizedBox20,
               RoundedButton(
                 title: 'NAUKA',
                 screenId: ScienceScreen.id,
@@ -83,21 +79,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: 'QUIZ',
                   screenId: QuizScreen.id,
                   colour: kRoundedButtonColor),
-              const SizedBox(
-                height: 20.0,
-              ),
+              kSizedBox20,
               const Expanded(
                 child: Image(
                   image: AssetImage('images/flask_4.png'),
                 ),
               ),
-              const SizedBox(
-                height: 20.0,
-              ),
+              kSizedBox20,
               kAuthorName,
-              const SizedBox(
-                height: 10.0,
-              ),
+              kSizedBox10,
             ],
           ),
         ),

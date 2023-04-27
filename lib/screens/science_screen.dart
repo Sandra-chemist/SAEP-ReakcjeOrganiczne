@@ -38,7 +38,7 @@ class _ScienceScreenState extends State<ScienceScreen> {
       appBar: BlueAppBar(),
       body: Column(
         children: [
-          kSizedBox,
+          kSizedBox10,
           Title(
             color: Colors.black,
             child: Text(
@@ -46,7 +46,7 @@ class _ScienceScreenState extends State<ScienceScreen> {
               style: kTitleReactionStyle,
             ),
           ),
-          kSizedBox,
+          kSizedBox10,
           addExpandedWidget(
             Image(
               image: AssetImage(
@@ -89,7 +89,7 @@ class _ScienceScreenState extends State<ScienceScreen> {
               ],
             ),
           ),
-          kSizedBox,
+          kSizedBox10,
         ],
       ),
     );
