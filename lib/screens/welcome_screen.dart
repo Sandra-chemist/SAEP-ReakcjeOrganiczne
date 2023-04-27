@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saep_reakcje_organiczne/methods.dart';
 import 'package:saep_reakcje_organiczne/screens/login_screen.dart';
 import 'package:saep_reakcje_organiczne/components/rounded_button.dart';
 import 'package:saep_reakcje_organiczne/screens/registration_screen.dart';
@@ -6,13 +7,13 @@ import 'package:saep_reakcje_organiczne/constants.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
-  WelcomeScreen({super.key});
+  const WelcomeScreen({super.key});
 
   @override
-  _WelcomeScreenState createState() => _WelcomeScreenState();
+  WelcomeScreenState createState() => WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +26,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: [
             Column(
               children: [
-                const SizedBox(
-                  height: 20.0,
-                ),
+                addSizeBox(20),
                 Container(
                   decoration: kLogoDecoration,
                   child: const CircleAvatar(
@@ -44,9 +43,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   textAlign: TextAlign.justify,
                   style: kTitleStyle,
                 ),
-                const SizedBox(
-                  height: 20.0,
-                ),
+                addSizeBox(20),
               ],
             ),
             RoundedButton(
@@ -59,9 +56,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               screenId: RegistrationScreen.id,
               colour: const Color(0xFFbde0fe),
             ),
-            const SizedBox(
-              height: 50.0,
-            ),
+            addSizeBox(70),
             kAuthorName,
           ],
         ),
