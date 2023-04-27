@@ -46,7 +46,7 @@ const kLogoDecoration = BoxDecoration(
 const kMaterialButtonStyle = TextStyle(
   fontFamily: 'Handlee',
   fontSize: 25.0,
-  color: const Color(0XFF3a86ff),
+  color: Color(0XFF3a86ff),
   fontWeight: FontWeight.bold,
 );
 
@@ -54,9 +54,9 @@ const kUnderlineInputBorder = UnderlineInputBorder(
   borderSide: BorderSide(color: Colors.white),
 );
 
-const kBackgroundColor = const Color(0XFF3a86ff);
+const kBackgroundColor = Color(0XFF3a86ff);
 
-const kRoundedButtonColor = const Color(0xFFbde0fe);
+const kRoundedButtonColor = Color(0xFFbde0fe);
 
 const kAlertStyle = TextStyle(
   fontFamily: 'Kalam',
@@ -72,13 +72,13 @@ const kTitleReactionStyle = TextStyle(
     Shadow(
       offset: Offset(3.0, 3.0),
       blurRadius: 8.0,
-      color: const Color(0XFF3a86ff),
+      color: Color(0XFF3a86ff),
     ),
   ],
 );
 
 const kDescriptionStyle = TextStyle(
-  fontSize: 17.0,
+  fontSize: 16.0,
   fontFamily: 'Kalam',
   color: Colors.white,
 );
@@ -87,7 +87,7 @@ const kAnswerStyle = TextStyle(
   fontSize: 18.0,
   fontWeight: FontWeight.bold,
   fontFamily: 'Kalam',
-  color: const Color(0XFF3a86ff),
+  color: Color(0XFF3a86ff),
 );
 
 const kHintTextStyle = TextStyle(
@@ -96,7 +96,7 @@ const kHintTextStyle = TextStyle(
   fontSize: 20.0,
 );
 
-const kQuestionTextStyle = const TextStyle(
+const kQuestionTextStyle = TextStyle(
   fontSize: 25.0,
   color: Colors.white,
   fontFamily: 'Kalam',
