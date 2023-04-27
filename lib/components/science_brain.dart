@@ -6,29 +6,36 @@ class ScienceBrain {
   final List<Science> _scienceBank = [
     Science(
         titleReaction: 'Reakcja fenolu z jonami żelaza(III)',
-        descriptionReaction: 'Reakcja zachodzi',
-        reactionEquation: 'images/phenol.png',
-        reactionInTestTube: 'images/test_tube_phenol.png'),
+        descriptionReaction:
+            'Reakcja pozwala na odróżnienie grupy hydroskylowej przyłączonej do pierścienia aromatycznego (fenolu) od grupy hydroksylowej przyłączonej do łańcucha alifatycznego (alkoholu).',
+        reactionEquation: 'images/reaction_equations/phenol.png',
+        reactionInTestTube: 'images/test_tube_reactions/test_tube_phenol.png'),
     Science(
         titleReaction: 'Reakcja glikolu z wodorotlenkiem miedzi(II)',
-        descriptionReaction: 'dffffdf',
-        reactionEquation: 'images/glycol.png',
-        reactionInTestTube: 'images/test_tube_glycol.png'),
+        descriptionReaction:
+            'Reakcja pozwala odróżnić alkohole monohydroksylowe (reakcja nie zachodzi) od polihydroksylowych. W wyniku reakcji etano-1,2-diolu z wodorotlenkiem miedzi(II) roztwarza się i powstaje związek koordynacyjny, dający szafirowe zabarwienie ',
+        reactionEquation: 'images/reaction_equations/glycol.png',
+        reactionInTestTube: 'images/test_tube_reactions/test_tube_glycol.png'),
     Science(
         titleReaction: 'Reakcja fenolu z wodą bromową',
-        descriptionReaction: 'fddsfreawe',
-        reactionEquation: 'images/phenol_2.png',
-        reactionInTestTube: 'images/test_tube_phenol_2.png'),
+        descriptionReaction:
+            'Roztwór fenolu odbarwi wodę bromową, ponieważ zajdzie reackja substytucji elektrofilowej.',
+        reactionEquation: 'images/reaction_equations/phenol_2.png',
+        reactionInTestTube:
+            'images/test_tube_reactions/test_tube_phenol_2.png'),
     Science(
         titleReaction: 'Próba jodoformowa',
-        descriptionReaction: 'fddsfreawe',
-        reactionEquation: 'images/iodoform.png',
-        reactionInTestTube: 'images/test_tube_iodoform.png'),
+        descriptionReaction:
+            'Próba jodoformowa służy do identyfikacji metyloketonów. Pozytywna próba daje żółty osad trijodometanu (jodoformu).',
+        reactionEquation: 'images/reaction_equations/iodoform.png',
+        reactionInTestTube:
+            'images/test_tube_reactions/test_tube_iodoform.png'),
     Science(
         titleReaction: 'Reakcja glukozy z wodą bromową',
-        descriptionReaction: 'fddsfreawe',
-        reactionEquation: 'images/glucose.png',
-        reactionInTestTube: 'images/test_tube_glucose.png'),
+        descriptionReaction:
+            'Reakcję wykorzystuje się do odróżniania glukozy (aldozy) od fruktozy (ketozy). Roztwór glukozy odbarwia wodę bromową w obecności wodnego roztworu wodorowęglanu sodu. Wydzialają się również pęcherzyki gazu. W tch warunkach woda bromowa nie utlenia fruktozy',
+        reactionEquation: 'images/reaction_equations/glucose.png',
+        reactionInTestTube: 'images/test_tube_reactions/test_tube_glucose.png'),
   ];
 
   void nextReaction() {

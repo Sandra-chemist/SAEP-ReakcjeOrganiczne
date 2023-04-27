@@ -65,11 +65,16 @@ class _ScienceScreenState extends State<ScienceScreen> {
                   color: const Color(0XFF3a86ff),
                 ),
                 child: Center(
-                  child: Text(
-                    scienceBrain.getDescriptionReaction(),
-                    style: TextStyle(
-                      fontFamily: 'Kalam',
-                      color: Colors.white,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Text(
+                      scienceBrain.getDescriptionReaction(),
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        fontSize: 17.0,
+                        fontFamily: 'Kalam',
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
