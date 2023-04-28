@@ -44,7 +44,7 @@ class RegistrationScreenState extends State<RegistrationScreen> {
               textAlign: TextAlign.center,
               decoration: addInputDecoration('E-mail'),
               onChanged: (value) {
-                password = value;
+                email = value;
               },
             ),
             TextField(
@@ -65,8 +65,9 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                 child: MaterialButton(
                   onPressed: () async {
                     try {
-                      final newUser = await _auth.signInWithEmailAndPassword(
-                          email: email, password: password);
+                      final newUser =
+                          await _auth.createUserWithEmailAndPassword(
+                              email: email, password: password);
                       if (newUser != null) {
                         Navigator.pushNamed(context, HomeScreen.id);
                       }
